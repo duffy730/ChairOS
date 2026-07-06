@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="script" href="s">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,17 +15,34 @@
     <header class="header">
         <div class="logo-header">
             <h1 class="logo-title">PedroOS</h1>
-            <p class="logo-online">Online</p>
+            <div class="online">
+                <i class="bi bi-circle-fill text-gray" style="font-size: 7px"></i>
+                <p class="text-online">Online</p>
+            </div>
+            
         </div>
         <div class="data-header">
-            <p id="relogio"></p>
+            <p id="data"></p>
+            <p id="hora"></p>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <i class="bi bi-wifi text-light" style="font-size: 11px"></i>
+                <i class="bi bi-volume-up text-light" style="font-size: 11px"></i>
+                <i class="bi bi-battery-full text-light" style="font-size: 11px"></i>
+
             </ul>
         </nav>
     </header>
+
+    <div class="container">
+        <div class="apps-bar">
+            <button class="app-bt"><i class="bi bi-terminal text-light" style="font-size: 35px"></i></button>
+            <button class="app-bt"><i class="bi bi-folder-fill text-light" style="font-size: 35px"></i></button>
+            <button class="app-bt"><i class="bi bi-person-fill text-light" style="font-size: 37px"></i></button>
+        </div>
+    </div>
+
 </body>
 <script>
     function atualizarRelogio() {
@@ -42,10 +60,10 @@
             minute: '2-digit'
         });
 
-        const resultado = data + ' ' + hora;
 
         // Exibe na tela
-        document.getElementById('relogio').innerText = resultado;
+        document.getElementById('data').innerText = data;
+        document.getElementById('hora').innerText = hora;
     }
 
     // Executa a cada 1 segundo
