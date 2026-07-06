@@ -1,7 +1,77 @@
-#relogio {
-    gap: 10px;
+:root {
+  --bg-primary: #060B14;
+  --bg-secondary: #0D1321;
+  --surface: #121A2B;
+  --border: #24334A;
+
+  --text-primary: #F2F7FF;
+  --text-secondary: #B7C5D8;
+
+  --accent-blue: #3BBEFF;
+  --accent-cyan: #29E6FF;
+  --accent-purple: #8E5BFF;
+  --accent-purple-dark: #6A3EF7;
+
+  --success: #5BFF86;
+  --warning: #FFD54A;
+  --danger: #FF4D73;
+
+  --shadow: rgba(0, 0, 0, 0.45);
+  --overlay: rgba(6, 11, 20, 0.75);
+  --glass: rgba(18, 26, 43, 0.65);
+
+  --glow-blue: 0 0 10px rgba(59, 190, 255, 0.6);
+  --glow-cyan: 0 0 10px rgba(41, 230, 255, 0.6);
+  --glow-purple: 0 0 10px rgba(142, 91, 255, 0.6);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --transition: all 0.25s ease;
 }
 
-h1 {
-    color: #ff0000;
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 15px;
+}
+
+.logo-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.logo-online {
+    font-size: 13px;
+    color: var(--glow-secondary);
+    margin: 0;
+    background-color: var(--accent-purple);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+#relogio {
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
