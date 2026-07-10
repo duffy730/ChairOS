@@ -195,13 +195,139 @@
         },
         sobre: {
             title: "Sobre Mim",
-            width: "750px",
-            height: "550px",
+            width: "900px",
+            height: "600px",
             content: `
-                <h3>Pedro Chair</h3>
-                <p style="color: var(--accent-purple);">Sou estudante de Ciências e Tecnologia na UFBA e desenvolvedor em formação, com foco em desenvolvimento backend utilizando C#, ASP.NET Core, SQL Server e JavaScript. Atualmente atuo como Trainee no DETRAN, onde participo de projetos reais de desenvolvimento de software, aplicando conhecimentos em APIs REST, banco de dados e boas práticas de programação.
-                <p style="color: var(--accent-purple);">Tenho interesse em tecnologia, desenvolvimento de sistemas e resolução de problemas, buscando constantemente aprimorar minhas habilidades técnicas e aprender novas ferramentas e metodologias. Valorizo o trabalho em equipe, a troca de conhecimento e os desafios que contribuem para meu crescimento profissional.
-                <p style="color: var(--success);">Meu objetivo é evoluir como desenvolvedor, adquirindo experiência prática e contribuindo para a criação de soluções eficientes, escaláveis e que gerem impacto positivo para os usuários..
+                <div class="about-layout">
+
+                    <section class="about-profile">
+                        <span class="about-small-title">Olá, eu sou</span>
+
+                        <h2>Pedro Chair</h2>
+
+                        <h3>Desenvolvedor de Software</h3>
+
+                        <p>
+                            Estudante de Ciências e Tecnologia na UFBA e desenvolvedor backend em formação, com foco em C#, ASP.NET Core, SQL Server e JavaScript. Atualmente, atuo como Trainee no DETRAN, participando do desenvolvimento de APIs REST, modelagem de banco de dados e aplicação de boas práticas de programação. Apaixonado em tecnologia, desenvolvimento de sistemas e resolução de problemas, buscando constantemente aprimorar minhas habilidades técnicas e aprender novas ferramentas e metodologias.
+                        </p>
+
+                        <div class="about-tags">
+                            <span>Backend</span>
+                            <span>.NET</span>
+                            <span>APIs REST</span>
+                        </div>
+                    </section>
+
+                    <section class="about-code-panel">
+                        <div class="about-code">
+                            <div class="about-code-line">
+                                <span class="about-line-number">1</span>
+                                <code>
+                                    <span class="code-keyword">const</span>
+                                    <span class="code-variable">developer</span> = {
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">2</span>
+                                <code class="indent-1">
+                                    <span class="code-property">name</span>:
+                                    <span class="code-string">"Pedro Chair"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">3</span>
+                                <code class="indent-1">
+                                    <span class="code-property">role</span>:
+                                    <span class="code-string">"Software Developer"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">4</span>
+                                <code class="indent-1">
+                                    <span class="code-property">techs</span>: [
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">5</span>
+                                <code class="indent-2">
+                                    <span class="code-string">"C#"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">6</span>
+                                <code class="indent-2">
+                                    <span class="code-string">".NET Core"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">7</span>
+                                <code class="indent-2">
+                                    <span class="code-string">"SQL Server"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">8</span>
+                                <code class="indent-2">
+                                    <span class="code-string">"Python"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">9</span>
+                                <code class="indent-2">
+                                    <span class="code-string">"Javascipt"</span>
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">10</span>
+                                <code class="indent-1">],</code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">11</span>
+                                <code class="indent-1">
+                                    <span class="code-property">passion</span>:
+                                    <span class="code-string">"Criar, aprender e evoluir"</span>,
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">12</span>
+                                <code class="indent-1">
+                                    <span class="code-property">location</span>:
+                                    <span class="code-string">"Brasil"</span>
+                                </code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">13</span>
+                                <code>};</code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">14</span>
+                                <code>&nbsp;</code>
+                            </div>
+
+                            <div class="about-code-line">
+                                <span class="about-line-number">15</span>
+                                <code>
+                                    <span class="code-function">console.log</span>(developer);
+                                </code>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
             `
         },
         curriculo: {
@@ -211,13 +337,85 @@
         },
         contato: {
             title: "Contato",
-            width: "330px",
-            height: "290px",
+            width: "420px",
+            height: "610px",
             content: `
-                <h3>Contato</h3>
-                <a class="link-btn" href="https://github.com/duffy730" target="_blank">GitHub</a>
-                <a class="link-btn" href="https://www.linkedin.com/in/pedro-chair-30690a29a/" target="_blank">LinkedIn</a>
-                <a class="link-btn" href="mailto:pedrochair730@gmail.com" target="_blank">Enviar Email</a>
+                <div class="contact-container">
+
+                    <div class="contact-intro">
+                        <h2>Vamos conversar?</h2>
+
+                        <p>
+                            Estou sempre aberto a novas
+                            <strong>oportunidades</strong>,
+                            <strong>projetos</strong> e
+                            <strong>conexões</strong>.
+                        </p>
+                    </div>
+
+                    <div class="contact-divider">
+                        <span></span>
+                    </div>
+
+                    <span class="contact-label">
+                        MEUS CONTATOS
+                    </span>
+
+                    <div class="contact-list">
+
+                        <a
+                            href="mailto:pedrochair730@gmail.com"
+                            class="contact-card"
+                        >
+                            <div class="contact-card-icon email-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+
+                            <div class="contact-card-info">
+                                <strong>Email</strong>
+                                <span>pedrochair730@gmail.com</span>
+                            </div>
+
+                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/duffy730"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
+                            <div class="contact-card-icon github-icon">
+                                <i class="bi bi-github"></i>
+                            </div>
+
+                            <div class="contact-card-info">
+                                <strong>GitHub</strong>
+                                <span>github.com/duffy730</span>
+                            </div>
+
+                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/pedro-chair-30690a29a/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
+                            <div class="contact-card-icon linkedin-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+
+                            <div class="contact-card-info">
+                                <strong>LinkedIn</strong>
+                                <span>linkedin.com/in/pedro-chair</span>
+                            </div>
+
+                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
+                        </a>
+                    </div>
+                </div>
             `
         }
     };
@@ -463,6 +661,14 @@
         if (appName === "projetos") {
             win.classList.add("projects-window");
             iniciarProjetos(win);
+        }
+
+        if (appName === "sobre") {
+            win.classList.add("about-window");
+        }
+
+        if (appName === "contato") {
+            win.classList.add("contact-window");
         }
 
         win.querySelector(".window-close").addEventListener("click", () => {
