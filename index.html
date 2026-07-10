@@ -39,31 +39,31 @@
         <div class="apps-bar">
             <div class="app">
                 <button class="app-bt" data-app="terminal">
-                    <i class="bi bi-terminal text-light" style="font-size: 35px"></i> 
+                    <img src="assets/img/terminal.png" alt="terminal" class="app-icon">
                     <p class="app-name">Terminal</p>
                 </button>
             </div>
             <div class="app">
                 <button class="app-bt" data-app="projetos">
-                    <i class="bi bi-folder-fill text-light" style="font-size: 35px"></i>
+                    <img src="assets/img/projetos.png" alt="projetos" class="app-icon">
                     <p class="app-name">Projetos</p>
                 </button>
             </div>
             <div class="app">
                 <button class="app-bt" data-app="sobre">
-                    <i class="bi bi-person-fill text-light" style="font-size: 37px"></i>
+                    <img src="assets/img/sobre-mim.png" alt="sobre" class="app-icon">
                     <p class="app-name">Sobre mim</p>
                 </button>
             </div>
             <div class="app">
                 <button class="app-bt" data-app="curriculo">
-                    <i class="bi bi-file-earmark-text-fill text-light" style="font-size: 37px"></i>
+                    <img src="assets/img/curriculo.png" alt="curriculo" class="app-icon">
                     <p class="app-name">Currículo</p>
                 </button>
             </div>
             <div class="app">
                 <button class="app-bt" data-app="contato">
-                    <i class="bi bi-envelope-fill text-light" style="font-size: 37px"></i>
+                    <img src="assets/img/contato.png" alt="contato" class="app-icon">
                     <p class="app-name">Contato</p>
                 </button>
             </div>
@@ -148,21 +148,55 @@
             `
         },
         projetos: {
-            title: "Projetos",
-            width: "800px",
-            height: "500px",
-            content: `
-                <h3>Projetos</h3>
-                <p>Api Academia</p>
-                <p>Portfólio PedroOS</p>
-                <p>Sistema com .NET, SQL Server e JWT</p>
-                <a class="link-btn" href="https://github.com/duffy730" target="_blank">Meu GitHub</a>
+    title: "Projetos",
+    width: "950px",
+    height: "570px",
+    content: `
+        <div class="projects-layout">
+
+                    <aside class="projects-list">
+
+                        <button
+                            class="project-item"
+                            data-project="pedroos"
+                        >
+                            <div class="project-icon">
+                                <i class="bi bi-window"></i>
+                            </div>
+
+                            <div class="project-item-info">
+                                <strong>PedroOS</strong>
+                                <span>HTML / CSS / JavaScript</span>
+                            </div>
+                        </button>
+
+                        <button
+                            class="project-item active"
+                            data-project="academia"
+                        >
+                            <div class="project-icon">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+
+                            <div class="project-item-info">
+                                <strong>API Academia</strong>
+                                <span>.NET / SQL Server</span>
+                            </div>
+                        </button>
+
+                    </aside>
+
+                    <section class="project-details">
+                        <div class="project-content"></div>
+                    </section>
+
+                </div>
             `
         },
         sobre: {
             title: "Sobre Mim",
-            width: "900px",
-            height: "500px",
+            width: "750px",
+            height: "550px",
             content: `
                 <h3>Pedro Chair</h3>
                 <p style="color: var(--accent-purple);">Sou estudante de Ciências e Tecnologia na UFBA e desenvolvedor em formação, com foco em desenvolvimento backend utilizando C#, ASP.NET Core, SQL Server e JavaScript. Atualmente atuo como Trainee no DETRAN, onde participo de projetos reais de desenvolvimento de software, aplicando conhecimentos em APIs REST, banco de dados e boas práticas de programação.
@@ -187,6 +221,168 @@
             `
         }
     };
+
+    const projetosData = {
+        pedroos: {
+            titulo: "PedroOS",
+
+            descricao: `
+                Portfólio pessoal inspirado em um sistema operacional
+                futurista, com janelas arrastáveis, terminal interativo
+                e visual cyberpunk.
+            `,
+
+            tecnologias: [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Responsividade",
+                "Design UI/UX"
+            ],
+
+            arquivo: "windows.js",
+
+            codigo: `function openWindow(appName) {
+        const app = apps[appName];
+
+        if (!app) return;
+
+        const win = document.createElement("div");
+
+        win.classList.add("window");
+        win.dataset.window = appName;
+
+        windowArea.appendChild(win);
+    }`,
+
+            github: "https://github.com/duffy730/PedroOS"
+        },
+
+        academia: {
+            titulo: "API Academia",
+
+            descricao: `
+                API REST desenvolvida para gerenciar alunos, planos,
+                matrículas, pagamentos e produtos de uma academia.
+            `,
+
+            tecnologias: [
+                ".NET 8",
+                "C#",
+                "SQL Server",
+                "Entity Framework",
+                "DDD",
+                "JWT",
+                "Swagger"
+            ],
+
+            arquivo: "AlunoController.cs",
+
+            codigo: `public async Task<ActionResult> ObterPorId(int id)
+    {
+        var aluno = await _alunoService.ObterPorId(id);
+
+        if (aluno == null)
+            return NotFound();
+
+        return Ok(aluno);
+    }`,
+
+            github: "https://github.com/duffy730/ApiAcademia"
+        }
+    };
+
+    function iniciarProjetos(win) {
+        const botoes = win.querySelectorAll(".project-item");
+        const container = win.querySelector(".project-content");
+
+        function selecionarProjeto(id) {
+            const projeto = projetosData[id];
+
+            if (!projeto || !container) return;
+
+            botoes.forEach(botao => {
+                botao.classList.toggle(
+                    "active",
+                    botao.dataset.project === id
+                );
+            });
+
+            const tecnologias = projeto.tecnologias
+                .map(tecnologia => {
+                    return `
+                        <span class="project-tech">
+                            ${tecnologia}
+                        </span>
+                    `;
+                })
+                .join("");
+
+            container.innerHTML = `
+                <div class="project-details-header">
+                    <div>
+                        <span class="project-label">
+                            PROJETO SELECIONADO
+                        </span>
+
+                        <h2>${projeto.titulo}</h2>
+                    </div>
+
+                    <div class="project-status">
+                        <span></span>
+                        DISPONÍVEL
+                    </div>
+                </div>
+
+                <p class="project-description">
+                    ${projeto.descricao}
+                </p>
+
+                <div class="project-techs">
+                    ${tecnologias}
+                </div>
+
+                <div class="project-code">
+                    <div class="project-code-header">
+                        <span>${projeto.arquivo}</span>
+
+                        <div class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <pre><code>${escaparHTML(projeto.codigo)}</code></pre>
+                </div>
+
+                <a
+                    class="project-github"
+                    href="${projeto.github}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="bi bi-github"></i>
+                    Ver no GitHub
+                </a>
+            `;
+        }
+
+        botoes.forEach(botao => {
+            botao.addEventListener("click", () => {
+                selecionarProjeto(botao.dataset.project);
+            });
+        });
+
+        selecionarProjeto("pedroos");
+    }
+
+    function escaparHTML(texto) {
+        return texto
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;");
+    }
 
     appButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -218,8 +414,27 @@
         const win = document.createElement("div");
         win.classList.add("window");
 
-        win.style.width = app.width || "700px";
-        win.style.height = app.height || "500px";
+        const larguraDesejada = parseInt(app.width) || 700;
+        const alturaDesejada = parseInt(app.height) || 500;
+
+        const espacoLateral = window.innerWidth <= 600
+            ? 16
+            : window.innerWidth <= 850
+                ? 100
+                : 150;
+
+        const espacoVertical = window.innerWidth <= 600
+            ? 132
+            : 80;
+
+        const larguraMaxima = window.innerWidth - espacoLateral;
+        const alturaMaxima = window.innerHeight - espacoVertical;
+
+        const larguraFinal = Math.min(larguraDesejada, larguraMaxima);
+        const alturaFinal = Math.min(alturaDesejada, alturaMaxima);
+
+        win.style.width = `${larguraFinal}px`;
+        win.style.height = `${alturaFinal}px`;
 
         win.dataset.window = appName;
         win.style.zIndex = ++zIndex;
@@ -239,8 +454,15 @@
 
         windowArea.appendChild(win);
 
+        posicionarJanela(win);
+
         if(appName === "terminal"){
             iniciarTerminal();
+        }
+
+        if (appName === "projetos") {
+            win.classList.add("projects-window");
+            iniciarProjetos(win);
         }
 
         win.querySelector(".window-close").addEventListener("click", () => {
@@ -264,6 +486,8 @@
         let offsetY = 0;
 
         header.addEventListener("mousedown", (e) => {
+            if (window.innerWidth <= 600) return;
+            
             isDragging = true;
 
             offsetX = e.clientX - win.offsetLeft;
@@ -299,6 +523,7 @@
         if(!input) return;
 
         input.focus();
+    }
 
         input.addEventListener("keydown",function(e){
 
@@ -395,5 +620,75 @@ Cargo: Trainee DETRAN
 
             input.value="";
         });
+
+    function posicionarJanela(win) {
+        if (window.innerWidth <= 600) {
+            win.style.left = "8px";
+            win.style.top = "8px";
+            return;
+        }
+
+        const larguraArea = windowArea.clientWidth;
+        const alturaArea = windowArea.clientHeight;
+
+        const larguraSidebar = window.innerWidth <= 1200 ? 90 : 110;
+
+        const espacoDisponivel =
+            larguraArea - larguraSidebar;
+
+        const left =
+            larguraSidebar +
+            Math.max(
+                15,
+                (espacoDisponivel - win.offsetWidth) / 2
+            );
+
+        const top = Math.max(
+            20,
+            (alturaArea - win.offsetHeight) / 2
+        );
+
+        win.style.left = `${left}px`;
+        win.style.top = `${top}px`;
+    }
+
+    window.addEventListener("resize", () => {
+        const janelas = document.querySelectorAll(".window");
+
+        janelas.forEach(win => {
+            const larguraMaxima =
+                window.innerWidth <= 600
+                    ? window.innerWidth - 16
+                    : window.innerWidth - 150;
+
+            const alturaMaxima =
+                window.innerWidth <= 600
+                    ? window.innerHeight - 132
+                    : window.innerHeight - 80;
+
+            if (win.offsetWidth > larguraMaxima) {
+                win.style.width = `${larguraMaxima}px`;
+            }
+
+            if (win.offsetHeight > alturaMaxima) {
+                win.style.height = `${alturaMaxima}px`;
+            }
+
+            posicionarJanela(win);
+        });
+    });
+
+    if (window.visualViewport) {
+
+        window.visualViewport.addEventListener("resize", () => {
+
+            const output = document.getElementById("terminal-output");
+
+            if (output) {
+                output.scrollTop = output.scrollHeight;
+            }
+
+        });
+
     }
 </script>
