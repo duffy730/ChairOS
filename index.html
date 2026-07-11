@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PedroOS</title>
+    <title>ChairOS</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -14,7 +14,7 @@
     <!-- Header -->
     <header class="header">
         <div class="logo-header">
-            <h1 class="logo-title">PedroOS</h1>
+            <h1 class="logo-title">ChairOS</h1>
             <div class="online">
                 <i class="bi bi-circle-fill text-gray" style="font-size: 7px"></i>
                 <p class="text-online">Online</p>
@@ -138,11 +138,11 @@
             height: "500px",
             content: `
                 <div id="terminal-output" class="terminal-output">
-                    <p>PedroOS Terminal v1.0</p>
+                    <p>ChairOS Terminal v1.0</p>
                     <p>Digite <span style="color:#5BFF86">help</span> para listar os comandos.</p>
                 </div>
                 <div class="terminal-input-line">
-                    <span>pedro@pedroos:~$</span>
+                    <span>pedro@ChairOS:~$</span>
                     <input id="terminal-input" type="text" autocomplete="off">
                 </div>
             `
@@ -158,14 +158,14 @@
 
                         <button
                             class="project-item"
-                            data-project="pedroos"
+                            data-project="ChairOS"
                         >
                             <div class="project-icon">
                                 <i class="bi bi-window"></i>
                             </div>
 
                             <div class="project-item-info">
-                                <strong>PedroOS</strong>
+                                <strong>ChairOS</strong>
                                 <span>HTML / CSS / JavaScript</span>
                             </div>
                         </button>
@@ -421,8 +421,8 @@
     };
 
     const projetosData = {
-        pedroos: {
-            titulo: "PedroOS",
+        ChairOS: {
+            titulo: "ChairOS",
 
             descricao: `
                 Portfólio pessoal inspirado em um sistema operacional
@@ -453,7 +453,7 @@
         windowArea.appendChild(win);
     }`,
 
-            github: "https://github.com/duffy730/PedroOS"
+            github: "https://github.com/duffy730/ChairOS"
         },
 
         academia: {
@@ -572,7 +572,7 @@
             });
         });
 
-        selecionarProjeto("pedroos");
+        selecionarProjeto("ChairOS");
     }
 
     function escaparHTML(texto) {
@@ -737,7 +737,7 @@
 
             const comando = input.value.trim().toLowerCase();
 
-            output.innerHTML += `<p style="color:#29E6FF;">pedro@pedroos:~$ ${comando}</p>`;
+            output.innerHTML += `<p style="color:#29E6FF;">pedro@ChairOS:~$ ${comando}</p>`;
 
             switch(comando){
 
@@ -771,7 +771,7 @@
 
                 case "projects":
 
-                    output.innerHTML += `<p>• API Academia<br>• PedroOS<br>• Sistema DETRAN</p>`;
+                    output.innerHTML += `<p>• API Academia<br>• ChairOS<br>• Sistema DETRAN</p>`;
                     break;
 
                 case "github":
@@ -803,7 +803,7 @@
 
                     output.innerHTML += `
                     <pre>
-PedroOS
+ChairOS
 --------
 Nome: Pedro Chair
 Curso: Ciência e Tecnologia - UFBA
