@@ -220,6 +220,15 @@ a:hover {
     max-width: none !important;
 }
 
+.system-icon {
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.mobile-online {
+    display: none;
+}
+
 /* Apps */
 .apps-bar {
     width:110px;
@@ -1370,6 +1379,18 @@ body {
 
     .logo-title {
         font-size: 11px;
+    }
+
+    .logo-header .online {
+        display: none;
+    }
+
+    .system-icon {
+        display: none;
+    }
+
+    .mobile-online {
+        display: flex;
     }
 
     .data-header {
