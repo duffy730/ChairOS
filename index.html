@@ -721,111 +721,132 @@
         });
     }
 
-    function iniciarTerminal(){
-
+    function iniciarTerminal() {
         const input = document.getElementById("terminal-input");
         const output = document.getElementById("terminal-output");
 
-        if(!input) return;
+        if (!input || !output) return;
 
         input.focus();
-    }
 
-        input.addEventListener("keydown",function(e){
+        input.addEventListener("keydown", function (e) {
+            if (e.key !== "Enter") return;
 
-            if(e.key !== "Enter") return;
+            const comandoOriginal = input.value.trim();
+            const comando = comandoOriginal.toLowerCase();
 
-            const comando = input.value.trim().toLowerCase();
+            if (comando === "") return;
 
-            output.innerHTML += `<p style="color:#29E6FF;">pedro@ChairOS:~$ ${comando}</p>`;
+            output.innerHTML += `
+                <p style="color:#29E6FF;">
+                    pedro@ChairOS:~$ ${comandoOriginal}
+                </p>
+            `;
 
-            switch(comando){
-
+            switch (comando) {
                 case "help":
-
                     output.innerHTML += `
-                    <p>
-                    help<br>
-                    about<br>
-                    skills<br>
-                    projects<br>
-                    github<br>
-                    linkedin<br>
-                    contact<br>
-                    profile<br>
-                    curriculo<br>
-                    date<br>
-                    clear
-                    </p>`;
+                        <p>
+                            help<br>
+                            about<br>
+                            skills<br>
+                            projects<br>
+                            github<br>
+                            linkedin<br>
+                            contact<br>
+                            profile<br>
+                            curriculo<br>
+                            date<br>
+                            clear
+                        </p>
+                    `;
                     break;
 
                 case "about":
-
-                    output.innerHTML += `<p>Desenvolvedor Backend .NET apaixonado por tecnologia.</p>`;
+                    output.innerHTML += `
+                        <p>
+                            Desenvolvedor Backend .NET apaixonado por tecnologia.
+                        </p>
+                    `;
                     break;
 
                 case "skills":
-
-                    output.innerHTML += `<p>C#, ASP.NET Core, SQL Server, JavaScript, React, Entity Framework, JWT</p>`;
+                    output.innerHTML += `
+                        <p>
+                            C#, ASP.NET Core, SQL Server, JavaScript,
+                            React, Entity Framework e JWT
+                        </p>
+                    `;
                     break;
 
                 case "projects":
-
-                    output.innerHTML += `<p>• API Academia<br>• ChairOS<br>• Sistema DETRAN</p>`;
+                    output.innerHTML += `
+                        <p>
+                            • API Academia<br>
+                            • ChairOS
+                        </p>
+                    `;
                     break;
 
                 case "github":
-
-                    window.open("https://github.com/duffy730");
+                    window.open(
+                        "https://github.com/duffy730",
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
                     break;
 
                 case "linkedin":
-
-                    window.open("https://www.linkedin.com/in/pedro-chair-30690a29a/");
+                    window.open(
+                        "https://www.linkedin.com/in/pedro-chair-30690a29a/",
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
                     break;
 
                 case "contact":
-
-                    output.innerHTML += `<p>Email: pedrochair730@gmail.com</p>`;
+                    output.innerHTML += `
+                        <p>Email: pedrochair730@gmail.com</p>
+                    `;
                     break;
 
                 case "curriculo":
-
                     abrirArquivo("assets/img/Curriculo.pdf");
                     break;
 
                 case "date":
-
-                    output.innerHTML += `<p>${new Date().toLocaleString()}</p>`;
+                    output.innerHTML += `
+                        <p>${new Date().toLocaleString("pt-BR")}</p>
+                    `;
                     break;
 
                 case "profile":
-
                     output.innerHTML += `
-                    <pre>
-ChairOS
---------
-Nome: Pedro Chair
-Curso: Ciência e Tecnologia - UFBA
-Stack: .NET | C# | SQL Server
-Cargo: Trainee DETRAN
-                    </pre>`;
+                        <pre>ChairOS
+    --------
+    Nome: Pedro Chair
+    Curso: Ciência e Tecnologia - UFBA
+    Stack: .NET | C# | SQL Server
+    Cargo: Trainee DETRAN</pre>
+                    `;
                     break;
 
                 case "clear":
-
                     output.innerHTML = "";
                     break;
 
                 default:
-
-                    output.innerHTML += `<p>Comando não encontrado: ${comando}</p>`;
+                    output.innerHTML += `
+                        <p style="color: var(--danger);">
+                            Comando não encontrado: ${comandoOriginal}
+                        </p>
+                    `;
             }
 
             output.scrollTop = output.scrollHeight;
-
-            input.value="";
+            input.value = "";
         });
+    }
 
     function posicionarJanela(win) {
         if (window.innerWidth <= 600) {
