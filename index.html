@@ -189,6 +189,20 @@
                             </div>
                         </button>
 
+                        <button
+                            class="project-item active"
+                            data-project="webAcademia"
+                        >
+                            <div class="project-icon">
+                                <i class="bi bi-window"></i>
+                            </div>
+
+                            <div class="project-item-info">
+                                <strong>Web Academia</strong>
+                                <span>React / CSS / Node.js</span>
+                            </div>
+                        </button>
+
                     </aside>
 
                     <section class="project-details">
@@ -428,6 +442,7 @@
     const projetosData = {
         ChairOS: {
             titulo: "ChairOS",
+            status: "Disponível",
 
             descricao: `
                 Portfólio pessoal inspirado em um sistema operacional
@@ -463,6 +478,7 @@
 
         academia: {
             titulo: "API Academia",
+            status: "Disponível",
 
             descricao: `
                 API REST desenvolvida para gerenciar alunos, planos,
@@ -492,6 +508,45 @@
     }`,
 
             github: "https://github.com/duffy730/SistemaAcademia/tree/main/ApiAcademia"
+        },
+
+        webAcademia: {
+            titulo: "WEB Academia",
+            status: "Em desenvolvimento",
+
+            descricao: `
+                Aplicação web para gestão de academias integrada a uma API RESTful, 
+                oferecendo controle completo sobre alunos, matrículas, planos, 
+                pagamentos e estoque de produtos.
+            `,
+
+            tecnologias: [
+                "React",
+                "CSS",
+                "Integração com API",
+                "Node.js",
+                "Responsividade",
+            ],
+
+            arquivo: "Aluno.jsx",
+
+            codigo: `function StatCard({ titulo, valor, texto, tipo, icone }) {
+        return (
+            <article className="alunos-stat-card">
+            <div className={alunos-stat-icon {tipo}}>
+                {icone}
+            </div>
+
+            <div>
+                <span>{titulo}</span>
+                <strong>{valor}</strong>
+                <small>{texto}</small>
+            </div>
+            </article>
+        );
+    }`,
+
+            github: "https://github.com/duffy730/SistemaAcademia/tree/main/academia-web"
         }
     };
 
@@ -521,19 +576,19 @@
                 })
                 .join("");
 
+            const statusClass = projeto.status === "Disponível" ? "project-status" : "project-status-yellow";
+
             container.innerHTML = `
                 <div class="project-details-header">
                     <div>
                         <span class="project-label">
                             PROJETO SELECIONADO
                         </span>
-
-                        <h2>${projeto.titulo}</h2>
                     </div>
 
-                    <div class="project-status">
+                    <div class="${statusClass}">
                         <span></span>
-                        DISPONÍVEL
+                        <p>${projeto.status}</p>
                     </div>
                 </div>
 

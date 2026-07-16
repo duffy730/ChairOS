@@ -622,9 +622,51 @@ a:hover {
     gap: 7px;
 
     color: var(--success);
-    font-size: 9px;
+    font-size: 13px;
     letter-spacing: 1px;
     user-select: none;   
+}
+
+.project-status p {
+    padding: 0;
+    margin: 0;
+}
+
+.project-status-yellow p {
+    padding: 0;
+    margin: 0;
+}
+
+
+.project-status-yellow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--warning);
+    font-size: 13px;
+    letter-spacing: 1px;
+    user-select: none;   
+}
+
+.project-status > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+    box-shadow: 0 0 8px var(--success);
+}
+
+.project-status-yellow > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--warning);
+    box-shadow: 0 0 8px var(--warning);
 }
 
 .project-status > span {
