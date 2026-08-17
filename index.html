@@ -43,35 +43,47 @@
     <div id="window-area" class="desktop">
         <div class="apps-bar">
             <div class="app">
-                <button class="app-bt" data-app="terminal">
+                <button class="app-bt" onclick="openWindow('terminal')">
                     <img src="assets/img/terminal.png" alt="terminal" class="app-icon">
-                    <p class="app-name">Terminal</p>
                 </button>
+                <p class="app-name">Terminal</p>
             </div>
+
             <div class="app">
-                <button class="app-bt" data-app="projetos">
+                <button class="app-bt" onclick="openWindow('projetos')">
                     <img src="assets/img/projetos.png" alt="projetos" class="app-icon">
-                    <p class="app-name">Projetos</p>
                 </button>
+                <p class="app-name">Projetos</p>
             </div>
+
             <div class="app">
-                <button class="app-bt" data-app="sobre">
+                <button class="app-bt" onclick="openWindow('sobre')">
                     <img src="assets/img/sobre-mim.png" alt="sobre" class="app-icon">
-                    <p class="app-name">Sobre mim</p>
                 </button>
+                <p class="app-name">Sobre mim</p>
             </div>
+
             <div class="app">
-                <button class="app-bt" data-app="curriculo">
+                <button class="app-bt" onclick="abrirArquivo('assets/img/Curriculo.pdf')">
                     <img src="assets/img/curriculo.png" alt="curriculo" class="app-icon">
-                    <p class="app-name">Currículo</p>
                 </button>
+                <p class="app-name">Currículo</p>
             </div>
+
             <div class="app">
-                <button class="app-bt" data-app="contato">
+                <button class="app-bt" onclick="openWindow('contato')">
                     <img src="assets/img/contato.png" alt="contato" class="app-icon">
-                    <p class="app-name">Contato</p>
                 </button>
+                <p class="app-name">Contato</p>
             </div>
+
+            <div class="app">
+                <button class="app-bt" onclick="openWindow('trajetoria')">
+                    <img src="assets/img/terminal.png" alt="terminal" class="app-icon">
+                </button>
+                <p class="app-name">Trajetória</p>
+            </div>
+
         </div>
     </div>
     <div id="fileOverlay" class="file-overlay">
@@ -546,7 +558,7 @@
         );
     }`,
 
-            github: "https://github.com/duffy730/SistemaAcademia/tree/main/academia-web"
+            github: "https://github.com/duffy730/SistemaAcademia/tree/main/WebAcademia"
         }
     };
 
