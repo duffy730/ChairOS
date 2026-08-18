@@ -1,812 +1,2939 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>ChairOS</title>
-    <link rel="icon" type="image/png" href="assets/img/terminal.png">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="script" href="s">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/img/terminal.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
+
 </head>
+
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="logo-header">
-            <h1 class="logo-title">ChairOS</h1>
-            <div class="online">
-                <i class="bi bi-circle-fill text-gray" style="font-size: 7px"></i>
-                <p class="text-online">Online</p>
-            </div>
-            
-        </div>
-        <div class="data-header">
-            <p id="data"></p>
-            <p id="hora"></p>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <i class="bi bi-wifi system-icon"></i>
-                <i class="bi bi-volume-up system-icon"></i>
-                <i class="bi bi-battery-full system-icon"></i>
 
-                <div class="online mobile-online">
-                    <i class="bi bi-circle-fill text-gray" style="font-size: 7px"></i>
-                    <p class="text-online">Online</p>
-                </div>
-            </ul>
-        </nav>
-    </header>
 
-    <div id="window-area" class="desktop">
-        <div class="apps-bar">
-            <div class="app">
-                <button class="app-bt" data-app="terminal">
-                    <img src="assets/img/terminal.png" alt="terminal" class="app-icon">
-                    <p class="app-name">Terminal</p>
-                </button>
-            </div>
-            <div class="app">
-                <button class="app-bt" data-app="projetos">
-                    <img src="assets/img/projetos.png" alt="projetos" class="app-icon">
-                    <p class="app-name">Projetos</p>
-                </button>
-            </div>
-            <div class="app">
-                <button class="app-bt" data-app="sobre">
-                    <img src="assets/img/sobre-mim.png" alt="sobre" class="app-icon">
-                    <p class="app-name">Sobre mim</p>
-                </button>
-            </div>
-            <div class="app">
-                <button class="app-bt" data-app="curriculo">
-                    <img src="assets/img/curriculo.png" alt="curriculo" class="app-icon">
-                    <p class="app-name">Currículo</p>
-                </button>
-            </div>
-            <div class="app">
-                <button class="app-bt" data-app="contato">
-                    <img src="assets/img/contato.png" alt="contato" class="app-icon">
-                    <p class="app-name">Contato</p>
-                </button>
-            </div>
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="logo-header">
+
+        <h1 class="logo-title">
+            ChairOS
+        </h1>
+
+        <div class="online">
+
+            <i
+                class="bi bi-circle-fill"
+                style="font-size:7px"
+            ></i>
+
+            <p class="text-online">
+                Online
+            </p>
+
         </div>
+
     </div>
-    <div id="fileOverlay" class="file-overlay">
-        <button class="close-viewer" onclick="fecharArquivo()">
-            <i class="bi bi-x-lg"></i>
-        </button>
 
-        <div class="file-viewer">
-            <iframe id="fileFrame"></iframe>
-        </div>
+
+    <div class="data-header">
+
+        <p id="data"></p>
+
+        <p id="hora"></p>
+
     </div>
-</body>
+
+
+    <nav>
+
+        <ul class="nav-links">
+
+            <i class="bi bi-wifi system-icon"></i>
+
+            <i class="bi bi-volume-up system-icon"></i>
+
+            <i class="bi bi-battery-full system-icon"></i>
+
+
+            <div class="online mobile-online">
+
+                <i
+                    class="bi bi-circle-fill"
+                    style="font-size:7px"
+                ></i>
+
+                <p class="text-online">
+                    Online
+                </p>
+
+            </div>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     ÁREA PRINCIPAL
+========================================================= -->
+
+<div
+    id="window-area"
+    class="desktop"
+>
+
+
+    <!-- =====================================================
+         APPS
+    ===================================================== -->
+
+    <div class="apps-bar">
+
+
+        <!-- TERMINAL -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="terminal"
+            >
+
+                <img
+                    src="assets/img/terminal.png"
+                    alt="Terminal"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Terminal
+            </p>
+
+        </div>
+
+
+
+        <!-- PROJETOS -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="projetos"
+            >
+
+                <img
+                    src="assets/img/projetos.png"
+                    alt="Projetos"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Projetos
+            </p>
+
+        </div>
+
+
+
+        <!-- SOBRE -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="sobre"
+            >
+
+                <img
+                    src="assets/img/sobre-mim.png"
+                    alt="Sobre mim"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Sobre mim
+            </p>
+
+        </div>
+
+
+
+        <!-- CURRÍCULO -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="curriculo"
+            >
+
+                <img
+                    src="assets/img/curriculo.png"
+                    alt="Currículo"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Currículo
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTATO -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="contato"
+            >
+
+                <img
+                    src="assets/img/contato.png"
+                    alt="Contato"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Contato
+            </p>
+
+        </div>
+
+
+
+        <!-- TRAJETÓRIA -->
+
+        <div class="app">
+
+            <button
+                class="app-bt"
+                data-app="trajetoria"
+            >
+
+                <img
+                    src="assets/img/trajetoria.png"
+                    alt="Trajetória"
+                    class="app-icon"
+                >
+
+            </button>
+
+            <p class="app-name">
+                Trajetória
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CURRÍCULO
+========================================================= -->
+
+<div
+    id="fileOverlay"
+    class="file-overlay"
+>
+
+    <button
+        class="close-viewer"
+        onclick="fecharArquivo()"
+    >
+
+        <i class="bi bi-x-lg"></i>
+
+    </button>
+
+
+    <div class="file-viewer">
+
+        <iframe
+            id="fileFrame"
+        ></iframe>
+
+    </div>
+
+</div>
+
+
+
 <script>
-    function atualizarRelogio() {
-        const agora = new Date();
-        
-        // Define o formato: dd/mm/aa e hh:mm:ss
-        const data = agora.toLocaleString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: '2-digit'
-        });
-
-        const hora = agora.toLocaleString('pt-BR', {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
 
 
-        // Exibe na tela
-        document.getElementById('data').innerText = data;
-        document.getElementById('hora').innerText = hora;
+/* =========================================================
+   RELÓGIO
+========================================================= */
+
+function atualizarRelogio() {
+
+    const agora = new Date();
+
+
+    const data =
+        agora.toLocaleString(
+            "pt-BR",
+            {
+                day: "2-digit",
+                month: "2-digit",
+                year: "2-digit"
+            }
+        );
+
+
+    const hora =
+        agora.toLocaleString(
+            "pt-BR",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+
+    const dataElemento =
+        document.getElementById("data");
+
+
+    const horaElemento =
+        document.getElementById("hora");
+
+
+    if (dataElemento) {
+
+        dataElemento.textContent = data;
+
     }
 
-    function abrirArquivo(src) {
-    const overlay = document.getElementById("fileOverlay");
-    const frame = document.getElementById("fileFrame");
+
+    if (horaElemento) {
+
+        horaElemento.textContent = hora;
+
+    }
+
+}
+
+
+atualizarRelogio();
+
+setInterval(
+    atualizarRelogio,
+    1000
+);
+
+
+
+/* =========================================================
+   CURRÍCULO
+========================================================= */
+
+function abrirArquivo(src) {
+
+    const overlay =
+        document.getElementById(
+            "fileOverlay"
+        );
+
+
+    const frame =
+        document.getElementById(
+            "fileFrame"
+        );
+
+
+    if (!overlay || !frame) {
+        return;
+    }
+
 
     frame.src = src;
-    overlay.classList.add("active");
-    document.body.classList.add("viewer-open");
+
+    overlay.classList.add(
+        "active"
+    );
+
+    document.body.classList.add(
+        "viewer-open"
+    );
+
+}
+
+
+function fecharArquivo() {
+
+    const overlay =
+        document.getElementById(
+            "fileOverlay"
+        );
+
+
+    const frame =
+        document.getElementById(
+            "fileFrame"
+        );
+
+
+    if (!overlay || !frame) {
+        return;
     }
 
-    function fecharArquivo() {
-        const overlay = document.getElementById("fileOverlay");
-        const frame = document.getElementById("fileFrame");
-
-        overlay.classList.remove("active");
-        document.body.classList.remove("viewer-open");
-
-        frame.src = "";
-    }
-
-    // Executa a cada 1 segundo
-    setInterval(atualizarRelogio, 1000);
-    
-    // Executa imediatamente ao abrir a página
-    atualizarRelogio();
-
-    const windowArea = document.getElementById("window-area");
-    const appButtons = document.querySelectorAll(".app-bt");
-
-    let zIndex = 20;
-
-    const apps = {
-        terminal: {
-            title: "Terminal",
-            width: "900px",
-            height: "500px",
-            content: `
-                <div id="terminal-output" class="terminal-output">
-                    <p>ChairOS Terminal v1.0</p>
-                    <p>Digite <span style="color:#5BFF86">help</span> para listar os comandos.</p>
-                </div>
-                <div class="terminal-input-line">
-                    <span>pedro@ChairOS:~$</span>
-                    <input id="terminal-input" type="text" autocomplete="off">
-                </div>
-            `
-        },
-        projetos: {
-    title: "Projetos",
-    width: "950px",
-    height: "570px",
-    content: `
-        <div class="projects-layout">
-
-                    <aside class="projects-list">
-
-                        <button
-                            class="project-item"
-                            data-project="ChairOS"
-                        >
-                            <div class="project-icon">
-                                <i class="bi bi-window"></i>
-                            </div>
-
-                            <div class="project-item-info">
-                                <strong>ChairOS</strong>
-                                <span>HTML / CSS / JavaScript</span>
-                            </div>
-                        </button>
-
-                        <button
-                            class="project-item active"
-                            data-project="academia"
-                        >
-                            <div class="project-icon">
-                                <i class="bi bi-code-slash"></i>
-                            </div>
-
-                            <div class="project-item-info">
-                                <strong>API Academia</strong>
-                                <span>.NET / SQL Server</span>
-                            </div>
-                        </button>
-
-                        <button
-                            class="project-item active"
-                            data-project="webAcademia"
-                        >
-                            <div class="project-icon">
-                                <i class="bi bi-window"></i>
-                            </div>
-
-                            <div class="project-item-info">
-                                <strong>Web Academia</strong>
-                                <span>React / CSS / Node.js</span>
-                            </div>
-                        </button>
-
-                    </aside>
-
-                    <section class="project-details">
-                        <div class="project-content"></div>
-                    </section>
-
-                </div>
-            `
-        },
-        sobre: {
-            title: "Sobre Mim",
-            width: "900px",
-            height: "600px",
-            content: `
-                <div class="about-layout">
-
-                    <section class="about-profile">
-                        <span class="about-small-title">Olá, eu sou</span>
-
-                        <h2>Pedro Chair</h2>
-
-                        <h3>Desenvolvedor de Software</h3>
-
-                        <p>
-                            Estudante de Ciências e Tecnologia na UFBA e desenvolvedor backend em formação, com foco em C#, ASP.NET Core, SQL Server e JavaScript. Atualmente, atuo como Trainee no DETRAN, participando do desenvolvimento de APIs REST, modelagem de banco de dados e aplicação de boas práticas de programação. Apaixonado em tecnologia, desenvolvimento de sistemas e resolução de problemas, buscando constantemente aprimorar minhas habilidades técnicas e aprender novas ferramentas e metodologias.
-                        </p>
-
-                        <div class="about-tags">
-                            <span>Backend</span>
-                            <span>.NET</span>
-                            <span>APIs REST</span>
-                        </div>
-                    </section>
-
-                    <section class="about-code-panel">
-                        <div class="about-code">
-                            <div class="about-code-line">
-                                <span class="about-line-number">1</span>
-                                <code>
-                                    <span class="code-keyword">const</span>
-                                    <span class="code-variable">developer</span> = {
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">2</span>
-                                <code class="indent-1">
-                                    <span class="code-property">name</span>:
-                                    <span class="code-string">"Pedro Chair"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">3</span>
-                                <code class="indent-1">
-                                    <span class="code-property">role</span>:
-                                    <span class="code-string">"Software Developer"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">4</span>
-                                <code class="indent-1">
-                                    <span class="code-property">techs</span>: [
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">5</span>
-                                <code class="indent-2">
-                                    <span class="code-string">"C#"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">6</span>
-                                <code class="indent-2">
-                                    <span class="code-string">".NET Core"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">7</span>
-                                <code class="indent-2">
-                                    <span class="code-string">"SQL Server"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">8</span>
-                                <code class="indent-2">
-                                    <span class="code-string">"Python"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">9</span>
-                                <code class="indent-2">
-                                    <span class="code-string">"Javascipt"</span>
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">10</span>
-                                <code class="indent-1">],</code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">11</span>
-                                <code class="indent-1">
-                                    <span class="code-property">passion</span>:
-                                    <span class="code-string">"Criar, aprender e evoluir"</span>,
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">12</span>
-                                <code class="indent-1">
-                                    <span class="code-property">location</span>:
-                                    <span class="code-string">"Brasil"</span>
-                                </code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">13</span>
-                                <code>};</code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">14</span>
-                                <code>&nbsp;</code>
-                            </div>
-
-                            <div class="about-code-line">
-                                <span class="about-line-number">15</span>
-                                <code>
-                                    <span class="code-function">console.log</span>(developer);
-                                </code>
-                            </div>
-
-                        </div>
-                    </section>
-
-                </div>
-            `
-        },
-        curriculo: {
-            action: () => {
-                window.open("assets/img/Curriculo.pdf", "_blank");
-            }
-        },
-        contato: {
-            title: "Contato",
-            width: "420px",
-            height: "610px",
-            content: `
-                <div class="contact-container">
-
-                    <div class="contact-intro">
-                        <h2>Vamos conversar?</h2>
-
-                        <p>
-                            Estou sempre aberto a novas
-                            <strong>oportunidades</strong>,
-                            <strong>projetos</strong> e
-                            <strong>conexões</strong>.
-                        </p>
-                    </div>
-
-                    <div class="contact-divider">
-                        <span></span>
-                    </div>
-
-                    <span class="contact-label">
-                        MEUS CONTATOS
-                    </span>
-
-                    <div class="contact-list">
-
-                        <a
-                            href="mailto:pedrochair730@gmail.com"
-                            class="contact-card"
-                        >
-                            <div class="contact-card-icon email-icon">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-
-                            <div class="contact-card-info">
-                                <strong>Email</strong>
-                                <span>pedrochair730@gmail.com</span>
-                            </div>
-
-                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
-                        </a>
-
-                        <a
-                            href="https://github.com/duffy730"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-card"
-                        >
-                            <div class="contact-card-icon github-icon">
-                                <i class="bi bi-github"></i>
-                            </div>
-
-                            <div class="contact-card-info">
-                                <strong>GitHub</strong>
-                                <span>github.com/duffy730</span>
-                            </div>
-
-                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/pedro-chair-30690a29a/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-card"
-                        >
-                            <div class="contact-card-icon linkedin-icon">
-                                <i class="bi bi-linkedin"></i>
-                            </div>
-
-                            <div class="contact-card-info">
-                                <strong>LinkedIn</strong>
-                                <span>linkedin.com/in/pedro-chair</span>
-                            </div>
-
-                            <i class="bi bi-box-arrow-up-right contact-open-icon"></i>
-                        </a>
-                    </div>
-                </div>
-            `
-        }
-    };
-
-    const projetosData = {
-        ChairOS: {
-            titulo: "ChairOS",
-            status: "Disponível",
-
-            descricao: `
-                Portfólio pessoal inspirado em um sistema operacional
-                futurista, com janelas arrastáveis, terminal interativo
-                e visual cyberpunk.
-            `,
-
-            tecnologias: [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "Responsividade",
-                "Design UI/UX"
-            ],
-
-            arquivo: "windows.js",
-
-            codigo: `function openWindow(appName) {
-        const app = apps[appName];
-
-        if (!app) return;
-
-        const win = document.createElement("div");
-
-        win.classList.add("window");
-        win.dataset.window = appName;
-
-        windowArea.appendChild(win);
-    }`,
-
-            github: "https://github.com/duffy730/ChairOS"
-        },
-
-        academia: {
-            titulo: "API Academia",
-            status: "Disponível",
-
-            descricao: `
-                API REST desenvolvida para gerenciar alunos, planos,
-                matrículas, pagamentos e produtos de uma academia.
-            `,
-
-            tecnologias: [
-                ".NET 8",
-                "C#",
-                "SQL Server",
-                "Entity Framework",
-                "DDD",
-                "JWT",
-                "Swagger"
-            ],
-
-            arquivo: "AlunoController.cs",
-
-            codigo: `public async Task<ActionResult> ObterPorId(int id)
-    {
-        var aluno = await _alunoService.ObterPorId(id);
-
-        if (aluno == null)
-            return NotFound();
-
-        return Ok(aluno);
-    }`,
-
-            github: "https://github.com/duffy730/SistemaAcademia/tree/main/ApiAcademia"
-        },
-
-        webAcademia: {
-            titulo: "WEB Academia",
-            status: "Em desenvolvimento",
-
-            descricao: `
-                Aplicação web para gestão de academias integrada a uma API RESTful, 
-                oferecendo controle completo sobre alunos, matrículas, planos, 
-                pagamentos e estoque de produtos.
-            `,
-
-            tecnologias: [
-                "React",
-                "CSS",
-                "Integração com API",
-                "Node.js",
-                "Responsividade",
-            ],
-
-            arquivo: "Aluno.jsx",
-
-            codigo: `function StatCard({ titulo, valor, texto, tipo, icone }) {
-        return (
-            <article className="alunos-stat-card">
-            <div className={alunos-stat-icon {tipo}}>
+
+    overlay.classList.remove(
+        "active"
+    );
+
+    document.body.classList.remove(
+        "viewer-open"
+    );
+
+
+    frame.src = "";
+
+}
+
+
+
+/* =========================================================
+   ÁREA DAS JANELAS
+========================================================= */
+
+const windowArea =
+    document.getElementById(
+        "window-area"
+    );
+
+
+let zIndex = 20;
+
+
+
+/* =========================================================
+   DADOS DOS PROJETOS
+========================================================= */
+
+const projetosData = {
+
+
+    ChairOS: {
+
+        titulo: "ChairOS",
+
+        status: "Disponível",
+
+        descricao: `
+            Portfólio pessoal inspirado em um sistema operacional
+            futurista, com janelas arrastáveis, terminal interativo
+            e visual cyberpunk.
+        `,
+
+        tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Responsividade",
+            "Design UI/UX"
+        ],
+
+        arquivo: "windows.js",
+
+        codigo: `function openWindow(appName) {
+
+    const app = apps[appName];
+
+    if (!app) return;
+
+    const win =
+        document.createElement("div");
+
+    win.classList.add("window");
+
+    win.dataset.window = appName;
+
+    windowArea.appendChild(win);
+
+}`,
+
+        github:
+            "https://github.com/duffy730/ChairOS"
+
+    },
+
+
+    academia: {
+
+        titulo: "API Academia",
+
+        status: "Disponível",
+
+        descricao: `
+            API REST desenvolvida para gerenciar alunos,
+            planos, matrículas, pagamentos e produtos
+            de uma academia.
+        `,
+
+        tecnologias: [
+            ".NET 8",
+            "C#",
+            "SQL Server",
+            "Entity Framework",
+            "DDD",
+            "JWT",
+            "Swagger"
+        ],
+
+        arquivo: "AlunoController.cs",
+
+        codigo: `public async Task<ActionResult> ObterPorId(int id)
+{
+    var aluno =
+        await _alunoService.ObterPorId(id);
+
+    if (aluno == null)
+        return NotFound();
+
+    return Ok(aluno);
+}`,
+
+        github:
+            "https://github.com/duffy730/SistemaAcademia/tree/main/ApiAcademia"
+
+    },
+
+
+    webAcademia: {
+
+        titulo: "Web Academia",
+
+        status: "Em desenvolvimento",
+
+        descricao: `
+            Aplicação web para gestão de academias integrada
+            a uma API RESTful, oferecendo controle de alunos,
+            matrículas, planos, pagamentos e estoque.
+        `,
+
+        tecnologias: [
+            "React",
+            "CSS",
+            "Integração com API",
+            "Node.js",
+            "Responsividade"
+        ],
+
+        arquivo: "Aluno.jsx",
+
+        codigo: `function StatCard({
+    titulo,
+    valor,
+    texto,
+    tipo,
+    icone
+}) {
+
+    return (
+        <article
+            className="alunos-stat-card"
+        >
+
+            <div
+                className={\`alunos-stat-icon \${tipo}\`}
+            >
                 {icone}
             </div>
 
             <div>
-                <span>{titulo}</span>
-                <strong>{valor}</strong>
-                <small>{texto}</small>
+
+                <span>
+                    {titulo}
+                </span>
+
+                <strong>
+                    {valor}
+                </strong>
+
+                <small class>
+                    {texto}
+                </small>
+
             </div>
-            </article>
+
+        </article>
+    );
+}`,
+
+        github:
+            "https://github.com/duffy730/SistemaAcademia/tree/main/WebAcademia"
+
+    }
+
+};
+
+
+
+/* =========================================================
+   DADOS DA TRAJETÓRIA
+========================================================= */
+
+const trajectoryData = {
+
+
+    "linha-tempo": {
+
+        title: "Minha trajetória",
+
+        subtitle:
+            "Principais marcos da minha jornada até aqui",
+
+        items: [
+
+            {
+
+                date: "2024 - Atual",
+
+                title:
+                    "Trainee / Analista",
+
+                company:
+                    "DETRAN",
+
+                icon:
+                    "bi-briefcase",
+
+                status:
+                    "ATUAL",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Trainee",
+
+                description: `
+                    Atuação no desenvolvimento de sistemas
+                    e APIs utilizando C#, .NET, SQL Server
+                    e JavaScript.
+                `,
+
+                technologies: [
+                    "C#",
+                    ".NET",
+                    "ASP.NET Core",
+                    "SQL Server",
+                    "JavaScript",
+                    "REST API",
+                    "Git"
+                ],
+
+                achievements: [
+                    "Desenvolvimento de APIs REST",
+                    "Integração com bancos de dados",
+                    "Manutenção de sistemas",
+                    "Aplicação de boas práticas"
+                ]
+
+            },
+
+
+            {
+
+                date: "2024 - Atual",
+
+                title:
+                    "Ciência e Tecnologia",
+
+                company:
+                    "UFBA",
+
+                icon:
+                    "bi-mortarboard",
+
+                status:
+                    "EM ANDAMENTO",
+
+                local:
+                    "Salvador - BA",
+
+                type:
+                    "Graduação",
+
+                description: `
+                    Formação acadêmica na área de Ciência e
+                    Tecnologia, com estudos envolvendo
+                    programação, desenvolvimento de sistemas
+                    e fundamentos de tecnologia.
+                `,
+
+                technologies: [
+                    "Programação",
+                    "Algoritmos",
+                    "Desenvolvimento",
+                    "Tecnologia"
+                ],
+
+                achievements: [
+                    "Formação acadêmica",
+                    "Desenvolvimento de projetos",
+                    "Aprofundamento em programação"
+                ]
+
+            },
+
+
+            {
+
+                date: "2025.1",
+
+                title:
+                    "Info JR",
+
+                company:
+                    "UFBA",
+
+                icon:
+                    "bi-mortarboard",
+
+                status:
+                    "CONCLUÍDO",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Empresa JR",
+
+                description: `
+                    Formação técnica com foco em programação,
+                    desenvolvimento web, fundamentos de informática.
+                `,
+
+                technologies: [
+                    "Lógica",
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React",
+                    "Figma",
+                    "Programação"
+                ],
+
+                achievements: [
+                    "Formação técnica",
+                    "Desenvolvimento Web",
+                    "Projetos acadêmicos"
+                ]
+
+            },
+
+
+            {
+
+                date: "2024",
+
+                title:
+                    "Início da programação",
+
+                company:
+                    "AUTODIDATA",
+
+                icon:
+                    "bi-terminal",
+
+                status:
+                    "CONCLUÍDO",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Estudo pessoal",
+
+                description: `
+                    Primeiros contatos com programação e
+                    desenvolvimento web através de estudos
+                    independentes.
+                `,
+
+                technologies: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Python",
+                    "Lógica"
+                ],
+
+                achievements: [
+                    "Primeiros projetos",
+                    "Estudos independentes",
+                    "Fundamentos de programação"
+                ]
+
+            }
+
+        ]
+
+    },
+
+
+    "formacao": {
+
+        title:
+            "Formação",
+
+        subtitle:
+            "Minha formação acadêmica e estudos",
+
+        items: [
+
+            {
+
+                date:
+                    "2025 - Atual",
+
+                title:
+                    "Ciência e Tecnologia",
+
+                company:
+                    "UFBA",
+
+                icon:
+                    "bi-mortarboard",
+
+                status:
+                    "ATUAL",
+
+                local:
+                    "Salvador - BA",
+
+                type:
+                    "Graduação",
+
+                description: `
+                    Formação acadêmica voltada para ciência,
+                    tecnologia, programação e desenvolvimento
+                    de soluções computacionais.
+                `,
+
+                technologies: [
+                    "Programação",
+                    "Algoritmos",
+                    "Tecnologia",
+                    "Desenvolvimento"
+                ],
+
+                achievements: [
+                    "Formação acadêmica",
+                    "Projetos universitários",
+                    "Aprofundamento técnico"
+                ]
+
+            },
+
+
+            {
+
+                date:
+                    "2025.1",
+
+                title:
+                    "Info JR",
+
+                company:
+                    "UFBA",
+
+                icon:
+                    "bi-mortarboard",
+
+                status:
+                    "CONCLUÍDO",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Empresa JR",
+
+                description: `
+                    Formação técnica focada em front-end,
+                    programação e desenvolvimento
+                    web.
+                `,
+
+                technologies: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "React",
+                    "Figma"
+                ],
+
+                achievements: [
+                    "Formação técnica",
+                    "Projetos acadêmicos",
+                    "Programação"
+                ]
+
+            }
+
+        ]
+
+    },
+
+
+    "experiencias": {
+
+        title:
+            "Experiências",
+
+        subtitle:
+            "Experiências profissionais e projetos desenvolvidos",
+
+        items: [
+
+            {
+
+                date:
+                    "2024 - Atual",
+
+                title:
+                    "Trainee / Analista",
+
+                company:
+                    "DETRAN",
+
+                icon:
+                    "bi-briefcase",
+
+                status:
+                    "ATUAL",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Trainee",
+
+                description: `
+                    Desenvolvimento e manutenção de sistemas,
+                    APIs REST e integração com bancos de dados,
+                    utilizando C#, .NET, SQL Server e JavaScript.
+                `,
+
+                technologies: [
+                    "C#",
+                    ".NET",
+                    "ASP.NET Core",
+                    "SQL Server",
+                    "JavaScript",
+                    "REST API"
+                ],
+
+                achievements: [
+                    "Desenvolvimento de APIs",
+                    "Integração com banco de dados",
+                    "Manutenção de sistemas",
+                    "Desenvolvimento de funcionalidades"
+                ]
+
+            },
+
+
+            {
+
+                date:
+                    "2024 - Atual",
+
+                title:
+                    "Projetos Pessoais",
+
+                company:
+                    "DESENVOLVIMENTO",
+
+                icon:
+                    "bi-code-square",
+
+                status:
+                    "EM ANDAMENTO",
+
+                local:
+                    "Brasil",
+
+                type:
+                    "Projetos",
+
+                description: `
+                    Criação de sistemas, APIs e projetos
+                    experimentais para aprimoramento das
+                    habilidades técnicas.
+                `,
+
+                technologies: [
+                    "C#",
+                    ".NET",
+                    "JavaScript",
+                    "React",
+                    "SQL",
+                    "HTML",
+                    "CSS"
+                ],
+
+                achievements: [
+                    "ChairOS",
+                    "API Academia",
+                    "Web Academia",
+                    "Projetos experimentais"
+                ]
+
+            }
+
+        ]
+
+    },
+
+
+    "certificados": {
+
+        title:
+            "Certificados",
+
+        subtitle:
+            "Cursos, certificados e conquistas",
+
+        custom:
+            "certificates"
+
+    }
+
+};
+
+
+
+/* =========================================================
+   RENDER - DETALHES DA TRAJETÓRIA
+========================================================= */
+
+function renderTrajectoryDetails(item) {
+
+    if (!item) {
+        return "";
+    }
+
+    const statusClass =
+        item.status === "EM ANDAMENTO"
+            ? "trajectory-status in-progress"
+            : "trajectory-status";
+
+
+    const tecnologias =
+        (item.technologies || [])
+            .map(
+                tech =>
+                    `<span>${tech}</span>`
+            )
+            .join("");
+
+
+    const achievements =
+        (item.achievements || [])
+            .map(
+                achievement =>
+                    `<li>${achievement}</li>`
+            )
+            .join("");
+
+
+    return `
+
+        <aside class="trajectory-details">
+
+            <div class="details-top">
+
+                <div class="details-icon">
+
+                    <i
+                        class="bi ${item.icon}"
+                    ></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        ${item.title}
+                    </h3>
+
+                    <span>
+                        ${item.company}
+                    </span>
+
+                </div>
+
+
+                ${
+                    item.status
+                        ? `
+                            <small>
+                                ${item.status}
+                            </small>
+                        `
+                        : ""
+                }
+
+            </div>
+
+
+            <div class="details-info">
+
+
+                <div>
+
+                    <i
+                        class="bi bi-calendar3"
+                    ></i>
+
+                    <span>
+
+                        <label>
+                            Período
+                        </label>
+
+                        ${item.date}
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i
+                        class="bi bi-geo-alt"
+                    ></i>
+
+                    <span>
+
+                        <label>
+                            Local
+                        </label>
+
+                        ${item.local}
+
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <i
+                        class="bi bi-tag"
+                    ></i>
+
+                    <span>
+
+                        <label>
+                            Tipo
+                        </label>
+
+                        ${item.type}
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="details-section">
+
+                <h4>
+                    Descrição
+                </h4>
+
+                <p>
+                    ${item.description}
+                </p>
+
+            </div>
+
+
+            <div class="details-section">
+
+                <h4>
+                    Tecnologias principais
+                </h4>
+
+                <div class="tech-tags">
+
+                    ${tecnologias}
+
+                </div>
+
+            </div>
+
+
+            ${
+                achievements
+                    ? `
+
+                        <div class="details-section">
+
+                            <h4>
+                                Principais conquistas
+                            </h4>
+
+                            <ul>
+                                ${achievements}
+                            </ul>
+
+                        </div>
+
+                    `
+                    : ""
+            }
+
+
+        </aside>
+
+    `;
+
+}
+
+
+
+/* =========================================================
+   RENDER - TIMELINE
+========================================================= */
+
+function renderTimeline(items) {
+
+    return `
+
+        <section class="timeline">
+
+            ${items
+                .map(
+                    (item, index) => `
+
+                        <div
+                            class="
+                                timeline-item
+                                ${index === 0 ? "selected" : ""}
+                            "
+                            data-index="${index}"
+                        >
+
+                            <div class="timeline-date">
+
+                                ${item.date}
+
+                            </div>
+
+
+                            <div class="timeline-marker">
+
+                                <span></span>
+
+                            </div>
+
+
+                            <div class="timeline-card">
+
+                                <div
+                                    class="timeline-card-header"
+                                >
+
+                                    <div>
+
+                                        <h3>
+                                            ${item.title}
+                                        </h3>
+
+                                        <span>
+                                            ${item.company}
+                                        </span>
+
+                                    </div>
+
+
+                                    ${
+                                        item.status
+                                            ? `
+                                                <small>
+                                                    ${item.status}
+                                                </small>
+                                            `
+                                            : ""
+                                    }
+
+                                </div>
+
+
+                                <p>
+                                    ${item.description}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    `
+                )
+                .join("")}
+
+        </section>
+
+
+        ${renderTrajectoryDetails(items[0])}
+
+    `;
+
+}
+
+
+/* =========================================================
+   RENDER - CERTIFICADOS
+========================================================= */
+
+function renderCertificates() {
+
+    return `
+
+        <div class="certificates-container">
+
+
+            <div class="certificate-card">
+
+                <div class="certificate-icon">
+
+                    <i class="bi bi-award"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        SQL Completo
+                    </h3>
+
+                    <p>
+                        SQL Completo Aplicado ao Mercado de Trabalho
+                    </p>
+
+                    <span>
+                        Udemy
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="certificate-card">
+
+                <div class="certificate-icon">
+
+                    <i class="bi bi-patch-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        NETCore 3.1/NET5/6 - C# API
+                    </h3>
+
+                    <p>
+                        NETCore 3.1/NET5/6 - C# API - Arquitetura com DDD na PRÁTICA
+                    </p>
+
+                    <span>
+                        Udemy
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================================================
+   RENDER DA SEÇÃO DA TRAJETÓRIA
+========================================================= */
+
+function renderTrajectorySection(
+    win,
+    sectionName
+) {
+
+    const data =
+        trajectoryData[sectionName];
+
+
+    if (!data) {
+        return;
+    }
+
+
+    const content =
+        win.querySelector(
+            "#trajectory-content"
         );
-    }`,
 
-            github: "https://github.com/duffy730/SistemaAcademia/tree/main/academia-web"
+
+    const title =
+        win.querySelector(
+            "#trajectory-title"
+        );
+
+
+    const subtitle =
+        win.querySelector(
+            "#trajectory-subtitle"
+        );
+
+
+    if (!content) {
+        return;
+    }
+
+
+    if (title) {
+
+        title.textContent =
+            data.title;
+
+    }
+
+
+    if (subtitle) {
+
+        subtitle.textContent =
+            data.subtitle;
+
+    }
+
+
+    win
+        .querySelectorAll(
+            ".trajectory-menu"
+        )
+        .forEach(menu => {
+
+            menu.classList.toggle(
+                "active",
+                menu.dataset.section === sectionName
+            );
+
+        });
+
+
+
+    if (data.custom === "skills") {
+
+        content.innerHTML =
+            renderSkills();
+
+        return;
+
+    }
+
+
+    if (data.custom === "certificates") {
+
+        content.innerHTML =
+            renderCertificates();
+
+        return;
+
+    }
+
+
+    content.innerHTML =
+        renderTimeline(
+            data.items
+        );
+
+}
+
+
+
+/* =========================================================
+   INICIALIZAR TRAJETÓRIA
+========================================================= */
+
+function initTrajectory(win) {
+
+    const sidebar =
+        win.querySelector(
+            ".trajectory-sidebar"
+        );
+
+
+    const content =
+        win.querySelector(
+            "#trajectory-content"
+        );
+
+
+    if (!sidebar || !content) {
+        return;
+    }
+
+
+    /*
+       IMPORTANTE:
+
+       Não adicionamos listeners diretamente
+       nos elementos da timeline.
+
+       Usamos delegação de eventos.
+
+       Assim, quando o innerHTML muda,
+       os eventos continuam funcionando.
+    */
+
+
+    sidebar.addEventListener(
+        "click",
+        event => {
+
+            const menu =
+                event.target.closest(
+                    ".trajectory-menu"
+                );
+
+
+            if (!menu) {
+                return;
+            }
+
+
+            const section =
+                menu.dataset.section;
+
+
+            renderTrajectorySection(
+                win,
+                section
+            );
+
         }
-    };
+    );
 
-    function iniciarProjetos(win) {
-        const botoes = win.querySelectorAll(".project-item");
-        const container = win.querySelector(".project-content");
 
-        function selecionarProjeto(id) {
-            const projeto = projetosData[id];
 
-            if (!projeto || !container) return;
+    content.addEventListener(
+        "click",
+        event => {
 
-            botoes.forEach(botao => {
+            const item =
+                event.target.closest(
+                    ".timeline-item"
+                );
+
+
+            if (!item) {
+                return;
+            }
+
+
+            const section =
+                win.querySelector(
+                    ".trajectory-menu.active"
+                );
+
+
+            if (!section) {
+                return;
+            }
+
+
+            const sectionName =
+                section.dataset.section;
+
+
+            const data =
+                trajectoryData[sectionName];
+
+
+            if (!data || !data.items) {
+                return;
+            }
+
+
+            const index =
+                Number(
+                    item.dataset.index
+                );
+
+
+            const selected =
+                data.items[index];
+
+
+            if (!selected) {
+                return;
+            }
+
+
+            win
+                .querySelectorAll(
+                    ".timeline-item"
+                )
+                .forEach(
+                    element =>
+                        element.classList.remove(
+                            "selected"
+                        )
+                );
+
+
+            item.classList.add(
+                "selected"
+            );
+
+
+            const details =
+                renderTrajectoryDetails(
+                    selected
+                );
+
+
+            const oldDetails =
+                win.querySelector(
+                    ".trajectory-details"
+                );
+
+
+            if (oldDetails) {
+
+                oldDetails.outerHTML =
+                    details;
+
+            }
+
+        }
+    );
+
+
+
+    /*
+       Primeira seção.
+    */
+
+    renderTrajectorySection(
+        win,
+        "linha-tempo"
+    );
+
+}
+
+
+
+/* =========================================================
+   APPS
+========================================================= */
+
+const apps = {
+
+
+    terminal: {
+
+        title:
+            "Terminal",
+
+        width:
+            "900px",
+
+        height:
+            "500px",
+
+        content: `
+
+            <div
+                id="terminal-output"
+                class="terminal-output"
+            >
+
+                <p>
+                    ChairOS Terminal v1.0
+                </p>
+
+                <p>
+
+                    Digite
+
+                    <span
+                        style="color:#5BFF86"
+                    >
+                        help
+                    </span>
+
+                    para listar os comandos.
+
+                </p>
+
+            </div>
+
+
+            <div class="terminal-input-line">
+
+                <span>
+                    pedro@ChairOS:~$
+                </span>
+
+                <input
+                    id="terminal-input"
+                    type="text"
+                    autocomplete="off"
+                >
+
+            </div>
+
+        `
+
+    },
+
+
+
+    projetos: {
+
+        title:
+            "Projetos",
+
+        width:
+            "950px",
+
+        height:
+            "570px",
+
+        content: `
+
+            <div class="projects-layout">
+
+
+                <aside class="projects-list">
+
+
+                    <button
+                        class="project-item"
+                        data-project="ChairOS"
+                    >
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-window"></i>
+
+                        </div>
+
+
+                        <div class="project-item-info">
+
+                            <strong>
+                                ChairOS
+                            </strong>
+
+                            <span>
+                                HTML / CSS / JavaScript
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+
+                    <button
+                        class="project-item"
+                        data-project="academia"
+                    >
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-code-slash"></i>
+
+                        </div>
+
+
+                        <div class="project-item-info">
+
+                            <strong>
+                                API Academia
+                            </strong>
+
+                            <span>
+                                .NET / SQL Server
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+
+                    <button
+                        class="project-item"
+                        data-project="webAcademia"
+                    >
+
+                        <div class="project-icon">
+
+                            <i class="bi bi-window"></i>
+
+                        </div>
+
+
+                        <div class="project-item-info">
+
+                            <strong>
+                                Web Academia
+                            </strong>
+
+                            <span>
+                                React / CSS / Node.js
+                            </span>
+
+                        </div>
+
+                    </button>
+
+
+                </aside>
+
+
+                <section class="project-details">
+
+                    <div
+                        class="project-content"
+                    ></div>
+
+                </section>
+
+
+            </div>
+
+        `
+
+    },
+
+
+
+    sobre: {
+
+        title:
+            "Sobre Mim",
+
+        width:
+            "900px",
+
+        height:
+            "600px",
+
+        content: `
+
+            <div class="about-layout">
+
+
+                <section class="about-profile">
+
+                    <span class="about-small-title">
+                        Olá, eu sou
+                    </span>
+
+
+                    <h2>
+                        Pedro Chair
+                    </h2>
+
+
+                    <h3>
+                        Desenvolvedor de Software
+                    </h3>
+
+
+                    <p>
+                        Estudante de Ciências e Tecnologia
+                        na UFBA e desenvolvedor backend
+                        em formação, com foco em C#,
+                        ASP.NET Core, SQL Server e
+                        JavaScript.
+                    </p>
+
+
+                    <div class="about-tags">
+
+                        <span>
+                            Backend
+                        </span>
+
+                        <span>
+                            .NET
+                        </span>
+
+                        <span>
+                            APIs REST
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+
+                <section class="about-code-panel">
+
+                    <div class="about-code">
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                1
+                            </span>
+
+                            <code>
+
+                                <span class="code-keyword">
+                                    const
+                                </span>
+
+                                <span class="code-variable">
+                                    developer
+                                </span>
+
+                                = {
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                2
+                            </span>
+
+                            <code class="indent-1">
+
+                                <span class="code-property">
+                                    name
+                                </span>:
+
+                                <span class="code-string">
+                                    "Pedro Chair"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                3
+                            </span>
+
+                            <code class="indent-1">
+
+                                <span class="code-property">
+                                    role
+                                </span>:
+
+                                <span class="code-string">
+                                    "Software Developer"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                4
+                            </span>
+
+                            <code class="indent-1">
+
+                                <span class="code-property">
+                                    techs
+                                </span>: [
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                5
+                            </span>
+
+                            <code class="indent-2">
+
+                                <span class="code-string">
+                                    "C#"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                6
+                            </span>
+
+                            <code class="indent-2">
+
+                                <span class="code-string">
+                                    ".NET Core"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                7
+                            </span>
+
+                            <code class="indent-2">
+
+                                <span class="code-string">
+                                    "SQL Server"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                8
+                            </span>
+
+                            <code class="indent-2">
+
+                                <span class="code-string">
+                                    "Python"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                9
+                            </span>
+
+                            <code class="indent-2">
+
+                                <span class="code-string">
+                                    "JavaScript"
+                                </span>
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                10
+                            </span>
+
+                            <code class="indent-1">
+                                ],
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                11
+                            </span>
+
+                            <code class="indent-1">
+
+                                <span class="code-property">
+                                    passion
+                                </span>:
+
+                                <span class="code-string">
+                                    "Criar, aprender e evoluir"
+                                </span>,
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                12
+                            </span>
+
+                            <code class="indent-1">
+
+                                <span class="code-property">
+                                    location
+                                </span>:
+
+                                <span class="code-string">
+                                    "Brasil"
+                                </span>
+
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                13
+                            </span>
+
+                            <code>
+                                };
+                            </code>
+
+                        </div>
+
+
+                        <div class="about-code-line">
+
+                            <span class="about-line-number">
+                                15
+                            </span>
+
+                            <code>
+
+                                <span class="code-function">
+                                    console.log
+                                </span>
+
+                                (developer);
+
+                            </code>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        `
+
+    },
+
+
+
+    curriculo: {
+
+        action: () => {
+
+            abrirArquivo(
+                "assets/img/Curriculo.pdf"
+            );
+
+        }
+
+    },
+
+
+
+    contato: {
+
+        title:
+            "Contato",
+
+        width:
+            "420px",
+
+        height:
+            "610px",
+
+        content: `
+
+            <div class="contact-container">
+
+
+                <div class="contact-intro">
+
+                    <h2>
+                        Vamos conversar?
+                    </h2>
+
+                    <p>
+                        Estou sempre aberto a novas
+                        <strong>oportunidades</strong>,
+                        <strong>projetos</strong> e
+                        <strong>conexões</strong>.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-divider">
+
+                    <span></span>
+
+                </div>
+
+
+                <span class="contact-label">
+                    MEUS CONTATOS
+                </span>
+
+
+                <div class="contact-list">
+
+
+                    <a
+                        href="mailto:pedrochair730@gmail.com"
+                        class="contact-card"
+                    >
+
+                        <div
+                            class="contact-card-icon email-icon"
+                        >
+
+                            <i
+                                class="bi bi-envelope"
+                            ></i>
+
+                        </div>
+
+
+                        <div
+                            class="contact-card-info"
+                        >
+
+                            <strong>
+                                Email
+                            </strong>
+
+                            <span>
+                                pedrochair730@gmail.com
+                            </span>
+
+                        </div>
+
+
+                        <i
+                            class="
+                                bi
+                                bi-box-arrow-up-right
+                                contact-open-icon
+                            "
+                        ></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="https://github.com/duffy730"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                    >
+
+                        <div
+                            class="contact-card-icon github-icon"
+                        >
+
+                            <i
+                                class="bi bi-github"
+                            ></i>
+
+                        </div>
+
+
+                        <div
+                            class="contact-card-info"
+                        >
+
+                            <strong>
+                                GitHub
+                            </strong>
+
+                            <span>
+                                github.com/duffy730
+                            </span>
+
+                        </div>
+
+
+                        <i
+                            class="
+                                bi
+                                bi-box-arrow-up-right
+                                contact-open-icon
+                            "
+                        ></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="https://www.linkedin.com/in/pedro-chair-30690a29a/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                    >
+
+                        <div
+                            class="contact-card-icon linkedin-icon"
+                        >
+
+                            <i
+                                class="bi bi-linkedin"
+                            ></i>
+
+                        </div>
+
+
+                        <div
+                            class="contact-card-info"
+                        >
+
+                            <strong>
+                                LinkedIn
+                            </strong>
+
+                            <span>
+                                linkedin.com/in/pedro-chair
+                            </span>
+
+                        </div>
+
+
+                        <i
+                            class="
+                                bi
+                                bi-box-arrow-up-right
+                                contact-open-icon
+                            "
+                        ></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        `
+
+    },
+
+
+
+    trajetoria: {
+
+        title:
+            "Trajetória",
+
+        width:
+            "1100px",
+
+        height:
+            "570px",
+
+        content: `
+
+            <div class="trajectory">
+
+
+                <aside
+                    class="trajectory-sidebar"
+                >
+
+
+                    <div
+                        class="
+                            trajectory-menu
+                            active
+                        "
+                        data-section="linha-tempo"
+                    >
+
+                        <div
+                            class="trajectory-menu-icon"
+                        >
+
+                            <i
+                                class="
+                                    bi
+                                    bi-calendar2-week
+                                "
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Linha do tempo
+                            </strong>
+
+                            <span>
+                                Visão geral da trajetória
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="trajectory-menu"
+                        data-section="formacao"
+                    >
+
+                        <div
+                            class="trajectory-menu-icon"
+                        >
+
+                            <i
+                                class="
+                                    bi
+                                    bi-mortarboard
+                                "
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Formação
+                            </strong>
+
+                            <span>
+                                Cursos e estudos
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="trajectory-menu"
+                        data-section="experiencias"
+                    >
+
+                        <div
+                            class="trajectory-menu-icon"
+                        >
+
+                            <i
+                                class="
+                                    bi
+                                    bi-briefcase
+                                "
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Experiências
+                            </strong>
+
+                            <span>
+                                Trabalhos e projetos
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="trajectory-menu"
+                        data-section="certificados"
+                    >
+
+                        <div
+                            class="trajectory-menu-icon"
+                        >
+
+                            <i
+                                class="
+                                    bi
+                                    bi-award
+                                "
+                            ></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Certificados
+                            </strong>
+
+                            <span>
+                                Conquistas e certificados
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </aside>
+
+
+
+                <main class="trajectory-main">
+
+
+                    <div class="trajectory-header">
+
+
+                        <div>
+
+                            <h2
+                                id="trajectory-title"
+                            >
+                                Minha trajetória
+                            </h2>
+
+
+                            <p
+                                id="trajectory-subtitle"
+                            >
+                                Principais marcos da minha jornada até aqui
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        id="trajectory-content"
+                        class="trajectory-content"
+                    ></div>
+
+
+                </main>
+
+
+            </div>
+
+        `
+
+    }
+
+};
+
+
+
+/* =========================================================
+   ESCAPAR HTML
+========================================================= */
+
+function escaparHTML(texto) {
+
+    return texto
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+        .replaceAll(
+            '"',
+            "&quot;"
+        );
+
+}
+
+
+
+/* =========================================================
+   PROJETOS
+========================================================= */
+
+function iniciarProjetos(win) {
+
+    const botoes =
+        win.querySelectorAll(
+            ".project-item"
+        );
+
+
+    const container =
+        win.querySelector(
+            ".project-content"
+        );
+
+
+    if (!container) {
+        return;
+    }
+
+
+    function selecionarProjeto(id) {
+
+        const projeto =
+            projetosData[id];
+
+
+        if (!projeto) {
+            return;
+        }
+
+
+        botoes.forEach(
+            botao => {
+
                 botao.classList.toggle(
                     "active",
                     botao.dataset.project === id
                 );
-            });
 
-            const tecnologias = projeto.tecnologias
-                .map(tecnologia => {
-                    return `
-                        <span class="project-tech">
-                            ${tecnologia}
-                        </span>
-                    `;
-                })
+            }
+        );
+
+
+        const tecnologias =
+            projeto.tecnologias
+                .map(
+                    tecnologia =>
+                        `
+                            <span class="project-tech">
+                                ${tecnologia}
+                            </span>
+                        `
+                )
                 .join("");
 
-            const statusClass = projeto.status === "Disponível" ? "project-status" : "project-status-yellow";
 
-            container.innerHTML = `
-                <div class="project-details-header">
-                    <div>
-                        <span class="project-label">
-                            PROJETO SELECIONADO
-                        </span>
-                    </div>
+        const statusClass =
+            projeto.status === "Disponível"
+                ? "project-status"
+                : "project-status-yellow";
 
-                    <div class="${statusClass}">
-                        <span></span>
-                        <p>${projeto.status}</p>
-                    </div>
+
+        container.innerHTML = `
+
+            <div
+                class="project-details-header"
+            >
+
+                <div>
+
+                    <span class="project-label">
+                        PROJETO SELECIONADO
+                    </span>
+
+                    <h2>
+                        ${projeto.titulo}
+                    </h2>
+
                 </div>
 
-                <p class="project-description">
-                    ${projeto.descricao}
-                </p>
 
-                <div class="project-techs">
-                    ${tecnologias}
-                </div>
-
-                <div class="project-code">
-                    <div class="project-code-header">
-                        <span>${projeto.arquivo}</span>
-
-                        <div class="code-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <pre><code>${escaparHTML(projeto.codigo)}</code></pre>
-                </div>
-
-                <a
-                    class="project-github"
-                    href="${projeto.github}"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div
+                    class="${statusClass}"
                 >
-                    <i class="bi bi-github"></i>
-                    Ver no GitHub
-                </a>
-            `;
-        }
 
-        botoes.forEach(botao => {
-            botao.addEventListener("click", () => {
-                selecionarProjeto(botao.dataset.project);
-            });
-        });
+                    <span></span>
 
-        selecionarProjeto("ChairOS");
-    }
+                    <p>
+                        ${projeto.status}
+                    </p>
 
-    function escaparHTML(texto) {
-        return texto
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;");
-    }
+                </div>
 
-    appButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const appName = button.dataset.app;
-            const app = apps[appName];
-
-            if (!app) return;
-
-            if (app.action) {
-                app.action();
-            } else {
-                openWindow(appName);
-            }
-        });
-    });
-
-    function openWindow(appName) {
-        const app = apps[appName];
-
-        if (!app) return;
-
-        const existingWindow = document.querySelector(`[data-window="${appName}"]`);
-
-        if (existingWindow) {
-            existingWindow.style.zIndex = ++zIndex;
-            return;
-        }
-
-        const win = document.createElement("div");
-        win.classList.add("window");
-
-        const larguraDesejada = parseInt(app.width) || 700;
-        const alturaDesejada = parseInt(app.height) || 500;
-
-        const espacoLateral = window.innerWidth <= 600
-            ? 16
-            : window.innerWidth <= 850
-                ? 100
-                : 150;
-
-        const espacoVertical = window.innerWidth <= 600
-            ? 132
-            : 80;
-
-        const larguraMaxima = window.innerWidth - espacoLateral;
-        const alturaMaxima = window.innerHeight - espacoVertical;
-
-        const larguraFinal = Math.min(larguraDesejada, larguraMaxima);
-        const alturaFinal = Math.min(alturaDesejada, alturaMaxima);
-
-        win.style.width = `${larguraFinal}px`;
-        win.style.height = `${alturaFinal}px`;
-
-        win.dataset.window = appName;
-        win.style.zIndex = ++zIndex;
-
-        win.innerHTML = `
-            <div class="window-header">
-                <p class="window-title">${app.title}</p>
-                <button class="window-close">
-                    <i class="bi bi-x-lg"></i>
-                </button>
             </div>
 
-            <div class="window-content">
-                ${app.content}
+
+            <p class="project-description">
+                ${projeto.descricao}
+            </p>
+
+
+            <div class="project-techs">
+
+                ${tecnologias}
+
             </div>
+
+
+            <div class="project-code">
+
+
+                <div
+                    class="project-code-header"
+                >
+
+                    <span>
+                        ${projeto.arquivo}
+                    </span>
+
+
+                    <div class="code-dots">
+
+                        <span></span>
+
+                        <span></span>
+
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <pre><code>${escaparHTML(
+                    projeto.codigo
+                )}</code></pre>
+
+
+            </div>
+
+
+            <a
+                class="project-github"
+                href="${projeto.github}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <i
+                    class="bi bi-github"
+                ></i>
+
+                Ver no GitHub
+
+            </a>
+
         `;
 
-        windowArea.appendChild(win);
-
-        posicionarJanela(win);
-
-        if(appName === "terminal"){
-            iniciarTerminal();
-        }
-
-        if (appName === "projetos") {
-            win.classList.add("projects-window");
-            iniciarProjetos(win);
-        }
-
-        if (appName === "sobre") {
-            win.classList.add("about-window");
-        }
-
-        if (appName === "contato") {
-            win.classList.add("contact-window");
-        }
-
-        win.querySelector(".window-close").addEventListener("click", () => {
-            win.remove();
-        });
-
-        win.addEventListener("mousedown", () => {
-            win.style.zIndex = ++zIndex;
-        });
-
-        makeDraggable(win);
-
-        
     }
 
-    function makeDraggable(win) {
-        const header = win.querySelector(".window-header");
 
-        let isDragging = false;
-        let offsetX = 0;
-        let offsetY = 0;
+    /*
+       Delegação de eventos.
+       Assim também não quebra se o conteúdo
+       interno for alterado.
+    */
 
-        header.addEventListener("mousedown", (e) => {
-            if (window.innerWidth <= 600) return;
-            
-            isDragging = true;
+    win.addEventListener(
+        "click",
+        event => {
 
-            offsetX = e.clientX - win.offsetLeft;
-            offsetY = e.clientY - win.offsetTop;
-        });
+            const botao =
+                event.target.closest(
+                    ".project-item"
+                );
 
-        document.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
 
-            let x = e.clientX - offsetX;
-            let y = e.clientY - offsetY;
+            if (!botao) {
+                return;
+            }
 
-            const maxX = windowArea.clientWidth - win.offsetWidth;
-            const maxY = windowArea.clientHeight - win.offsetHeight;
 
-            x = Math.max(0, Math.min(x, maxX));
-            y = Math.max(0, Math.min(y, maxY));
+            selecionarProjeto(
+                botao.dataset.project
+            );
 
-            win.style.left = `${x}px`;
-            win.style.top = `${y}px`;
-        });
+        }
+    );
 
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-        });
+
+    /*
+       Primeiro projeto = ChairOS
+    */
+
+    selecionarProjeto(
+        "ChairOS"
+    );
+
+}
+
+
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+function iniciarTerminal(win) {
+
+    const input =
+        win.querySelector(
+            "#terminal-input"
+        );
+
+
+    const output =
+        win.querySelector(
+            "#terminal-output"
+        );
+
+
+    if (!input || !output) {
+        return;
     }
 
-    function iniciarTerminal() {
-        const input = document.getElementById("terminal-input");
-        const output = document.getElementById("terminal-output");
 
-        if (!input || !output) return;
+    input.focus();
 
-        input.focus();
 
-        input.addEventListener("keydown", function (e) {
-            if (e.key !== "Enter") return;
+    input.addEventListener(
+        "keydown",
+        event => {
 
-            const comandoOriginal = input.value.trim();
-            const comando = comandoOriginal.toLowerCase();
+            if (event.key !== "Enter") {
+                return;
+            }
 
-            if (comando === "") return;
+
+            const comandoOriginal =
+                input.value.trim();
+
+
+            const comando =
+                comandoOriginal.toLowerCase();
+
+
+            if (!comando) {
+                return;
+            }
+
 
             output.innerHTML += `
-                <p style="color:#29E6FF;">
-                    pedro@ChairOS:~$ ${comandoOriginal}
+
+                <p
+                    style="color:#29E6FF;"
+                >
+                    pedro@ChairOS:~$
+                    ${comandoOriginal}
                 </p>
+
             `;
 
+
             switch (comando) {
+
+
                 case "help":
+
                     output.innerHTML += `
+
                         <p>
+
                             help<br>
                             about<br>
                             skills<br>
@@ -818,164 +2945,869 @@
                             curriculo<br>
                             date<br>
                             clear
+
                         </p>
+
                     `;
+
                     break;
+
+
 
                 case "about":
+
                     output.innerHTML += `
+
                         <p>
-                            Desenvolvedor Backend .NET apaixonado por tecnologia.
+                            Desenvolvedor Backend .NET
+                            apaixonado por tecnologia.
                         </p>
+
                     `;
+
                     break;
+
+
 
                 case "skills":
+
                     output.innerHTML += `
+
                         <p>
-                            C#, ASP.NET Core, SQL Server, JavaScript,
-                            React, Entity Framework e JWT
+                            C#, ASP.NET Core,
+                            SQL Server, JavaScript,
+                            React, Entity Framework
+                            e JWT.
                         </p>
+
                     `;
+
                     break;
+
+
 
                 case "projects":
+
                     output.innerHTML += `
+
                         <p>
+                            • ChairOS<br>
                             • API Academia<br>
-                            • ChairOS
+                            • Web Academia
                         </p>
+
                     `;
+
                     break;
+
+
 
                 case "github":
+
                     window.open(
                         "https://github.com/duffy730",
-                        "_blank",
-                        "noopener,noreferrer"
+                        "_blank"
                     );
+
                     break;
+
+
 
                 case "linkedin":
+
                     window.open(
                         "https://www.linkedin.com/in/pedro-chair-30690a29a/",
-                        "_blank",
-                        "noopener,noreferrer"
+                        "_blank"
                     );
+
                     break;
+
+
 
                 case "contact":
+
                     output.innerHTML += `
-                        <p>Email: pedrochair730@gmail.com</p>
+
+                        <p>
+                            Email:
+                            pedrochair730@gmail.com
+                        </p>
+
                     `;
+
                     break;
+
+
 
                 case "curriculo":
-                    abrirArquivo("assets/img/Curriculo.pdf");
+
+                    abrirArquivo(
+                        "assets/img/Curriculo.pdf"
+                    );
+
                     break;
+
+
 
                 case "date":
+
                     output.innerHTML += `
-                        <p>${new Date().toLocaleString("pt-BR")}</p>
+
+                        <p>
+                            ${new Date().toLocaleString(
+                                "pt-BR"
+                            )}
+                        </p>
+
                     `;
+
                     break;
+
+
 
                 case "profile":
+
                     output.innerHTML += `
+
                         <pre>ChairOS
-    --------
-    Nome: Pedro Chair
-    Curso: Ciência e Tecnologia - UFBA
-    Stack: .NET | C# | SQL Server
-    Cargo: Trainee DETRAN</pre>
+--------
+Nome: Pedro Chair
+Curso: Ciência e Tecnologia - UFBA
+Stack: .NET | C# | SQL Server
+Cargo: Trainee DETRAN</pre>
+
                     `;
+
                     break;
+
+
 
                 case "clear":
+
                     output.innerHTML = "";
+
                     break;
 
+
+
                 default:
+
                     output.innerHTML += `
-                        <p style="color: var(--danger);">
-                            Comando não encontrado: ${comandoOriginal}
+
+                        <p
+                            style="
+                                color:var(--danger);
+                            "
+                        >
+
+                            Comando não encontrado:
+                            ${comandoOriginal}
+
                         </p>
+
                     `;
+
             }
 
-            output.scrollTop = output.scrollHeight;
+
+            output.scrollTop =
+                output.scrollHeight;
+
+
             input.value = "";
-        });
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   ABRIR JANELA
+========================================================= */
+
+function openWindow(appName) {
+
+    const app =
+        apps[appName];
+
+
+    if (!app) {
+        return;
     }
 
-    function posicionarJanela(win) {
-        if (window.innerWidth <= 600) {
-            win.style.left = "8px";
-            win.style.top = "8px";
+
+    const existing =
+        document.querySelector(
+            `[data-window="${appName}"]`
+        );
+
+
+    if (existing) {
+
+        existing.style.zIndex =
+            ++zIndex;
+
+        return;
+
+    }
+
+
+    const win =
+        document.createElement(
+            "div"
+        );
+
+
+    win.classList.add(
+        "window"
+    );
+
+
+    win.dataset.window =
+        appName;
+
+
+    const larguraDesejada =
+        parseInt(
+            app.width
+        ) || 700;
+
+
+    const alturaDesejada =
+        parseInt(
+            app.height
+        ) || 500;
+
+
+    const mobile =
+        window.innerWidth <= 600;
+
+
+    const espacoLateral =
+        mobile
+            ? 16
+            : window.innerWidth <= 850
+                ? 100
+                : 150;
+
+
+    const espacoVertical =
+        mobile
+            ? 132
+            : 80;
+
+
+    const larguraMaxima =
+        Math.max(
+            280,
+            window.innerWidth -
+            espacoLateral
+        );
+
+
+    const alturaMaxima =
+        Math.max(
+            250,
+            window.innerHeight -
+            espacoVertical
+        );
+
+
+    const larguraFinal =
+        Math.min(
+            larguraDesejada,
+            larguraMaxima
+        );
+
+
+    const alturaFinal =
+        Math.min(
+            alturaDesejada,
+            alturaMaxima
+        );
+
+
+    win.style.width =
+        `${larguraFinal}px`;
+
+
+    win.style.height =
+        `${alturaFinal}px`;
+
+
+    win.style.zIndex =
+        ++zIndex;
+
+
+    win.innerHTML = `
+
+        <div class="window-header">
+
+            <p class="window-title">
+                ${app.title || ""}
+            </p>
+
+
+            <button
+                class="window-close"
+                type="button"
+            >
+
+                <i
+                    class="bi bi-x-lg"
+                ></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="window-content">
+
+            ${app.content || ""}
+
+        </div>
+
+    `;
+
+
+    windowArea.appendChild(
+        win
+    );
+
+
+    /*
+       Posiciona depois de inserir
+       no DOM para que offsetWidth
+       e offsetHeight estejam corretos.
+    */
+
+    posicionarJanela(
+        win
+    );
+
+
+    /*
+       Inicializadores específicos.
+    */
+
+    if (appName === "terminal") {
+
+        iniciarTerminal(
+            win
+        );
+
+    }
+
+
+    if (appName === "projetos") {
+
+        win.classList.add(
+            "projects-window"
+        );
+
+        iniciarProjetos(
+            win
+        );
+
+    }
+
+
+    if (appName === "sobre") {
+
+        win.classList.add(
+            "about-window"
+        );
+
+    }
+
+
+    if (appName === "contato") {
+
+        win.classList.add(
+            "contact-window"
+        );
+
+    }
+
+
+    if (appName === "trajetoria") {
+
+        win.classList.add(
+            "trajectory-window"
+        );
+
+        initTrajectory(
+            win
+        );
+
+    }
+
+
+    /*
+       Fechar.
+    */
+
+    const close =
+        win.querySelector(
+            ".window-close"
+        );
+
+
+    if (close) {
+
+        close.addEventListener(
+            "click",
+            event => {
+
+                event.stopPropagation();
+
+                win.remove();
+
+            }
+        );
+
+    }
+
+
+    /*
+       Trazer para frente.
+    */
+
+    win.addEventListener(
+        "mousedown",
+        () => {
+
+            win.style.zIndex =
+                ++zIndex;
+
+        }
+    );
+
+
+    makeDraggable(
+        win
+    );
+
+}
+
+
+
+/* =========================================================
+   DRAG DAS JANELAS
+========================================================= */
+
+function makeDraggable(win) {
+
+    const header =
+        win.querySelector(
+            ".window-header"
+        );
+
+
+    if (!header) {
+        return;
+    }
+
+
+    let dragging =
+        false;
+
+
+    let offsetX =
+        0;
+
+
+    let offsetY =
+        0;
+
+
+    header.addEventListener(
+        "mousedown",
+        event => {
+
+            if (
+                window.innerWidth <= 600
+            ) {
+                return;
+            }
+
+
+            /*
+               Não inicia drag ao clicar
+               no botão de fechar.
+            */
+
+            if (
+                event.target.closest(
+                    ".window-close"
+                )
+            ) {
+                return;
+            }
+
+
+            dragging =
+                true;
+
+
+            offsetX =
+                event.clientX -
+                win.offsetLeft;
+
+
+            offsetY =
+                event.clientY -
+                win.offsetTop;
+
+
+            win.style.zIndex =
+                ++zIndex;
+
+        }
+    );
+
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            if (!dragging) {
+                return;
+            }
+
+
+            let x =
+                event.clientX -
+                offsetX;
+
+
+            let y =
+                event.clientY -
+                offsetY;
+
+
+            const maxX =
+                windowArea.clientWidth -
+                win.offsetWidth;
+
+
+            const maxY =
+                windowArea.clientHeight -
+                win.offsetHeight;
+
+
+            x =
+                Math.max(
+                    0,
+                    Math.min(
+                        x,
+                        maxX
+                    )
+                );
+
+
+            y =
+                Math.max(
+                    0,
+                    Math.min(
+                        y,
+                        maxY
+                    )
+                );
+
+
+            win.style.left =
+                `${x}px`;
+
+
+            win.style.top =
+                `${y}px`;
+
+        }
+    );
+
+
+    document.addEventListener(
+        "mouseup",
+        () => {
+
+            dragging =
+                false;
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   POSICIONAR JANELA
+========================================================= */
+
+function posicionarJanela(win) {
+
+    if (
+        window.innerWidth <= 600
+    ) {
+
+        win.style.left =
+            "8px";
+
+        win.style.top =
+            "8px";
+
+        return;
+
+    }
+
+
+    const larguraArea =
+        windowArea.clientWidth;
+
+
+    const alturaArea =
+        windowArea.clientHeight;
+
+
+    /*
+       A barra inferior é fixed,
+       portanto não precisa reservar
+       espaço lateral para ela.
+    */
+
+    const left =
+        Math.max(
+            15,
+            (
+                larguraArea -
+                win.offsetWidth
+            ) / 2
+        );
+
+
+    const top =
+        Math.max(
+            20,
+            (
+                alturaArea -
+                win.offsetHeight
+            ) / 2
+        );
+
+
+    win.style.left =
+        `${left}px`;
+
+
+    win.style.top =
+        `${top}px`;
+
+}
+
+
+
+/* =========================================================
+   BOTÕES DOS APPS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".app-bt"
+    )
+    .forEach(
+        button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const appName =
+                        button.dataset.app;
+
+
+                    const app =
+                        apps[appName];
+
+
+                    if (!app) {
+                        return;
+                    }
+
+
+                    if (app.action) {
+
+                        app.action();
+
+                    }
+                    else {
+
+                        openWindow(
+                            appName
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        const janelas =
+            document.querySelectorAll(
+                ".window"
+            );
+
+
+        janelas.forEach(
+            win => {
+
+                const mobile =
+                    window.innerWidth <= 600;
+
+
+                const larguraMaxima =
+                    mobile
+                        ? window.innerWidth - 16
+                        : window.innerWidth - 30;
+
+
+                const alturaMaxima =
+                    mobile
+                        ? window.innerHeight - 132
+                        : window.innerHeight - 80;
+
+
+                if (
+                    win.offsetWidth >
+                    larguraMaxima
+                ) {
+
+                    win.style.width =
+                        `${larguraMaxima}px`;
+
+                }
+
+
+                if (
+                    win.offsetHeight >
+                    alturaMaxima
+                ) {
+
+                    win.style.height =
+                        `${alturaMaxima}px`;
+
+                }
+
+
+                posicionarJanela(
+                    win
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   TECLADO MOBILE / TERMINAL
+========================================================= */
+
+if (
+    window.visualViewport
+) {
+
+    window.visualViewport.addEventListener(
+        "resize",
+        () => {
+
+            const terminal =
+                document.querySelector(
+                    '[data-window="terminal"]'
+                );
+
+
+            if (!terminal) {
+                return;
+            }
+
+
+            const output =
+                terminal.querySelector(
+                    "#terminal-output"
+                );
+
+
+            if (output) {
+
+                output.scrollTop =
+                    output.scrollHeight;
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   ESC FECHA CURRÍCULO
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key !== "Escape"
+        ) {
             return;
         }
 
-        const larguraArea = windowArea.clientWidth;
-        const alturaArea = windowArea.clientHeight;
 
-        const larguraSidebar = window.innerWidth <= 1200 ? 90 : 110;
-
-        const espacoDisponivel =
-            larguraArea - larguraSidebar;
-
-        const left =
-            larguraSidebar +
-            Math.max(
-                15,
-                (espacoDisponivel - win.offsetWidth) / 2
+        const overlay =
+            document.getElementById(
+                "fileOverlay"
             );
 
-        const top = Math.max(
-            20,
-            (alturaArea - win.offsetHeight) / 2
-        );
 
-        win.style.left = `${left}px`;
-        win.style.top = `${top}px`;
-    }
+        if (
+            overlay &&
+            overlay.classList.contains(
+                "active"
+            )
+        ) {
 
-    window.addEventListener("resize", () => {
-        const janelas = document.querySelectorAll(".window");
+            fecharArquivo();
 
-        janelas.forEach(win => {
-            const larguraMaxima =
-                window.innerWidth <= 600
-                    ? window.innerWidth - 16
-                    : window.innerWidth - 150;
-
-            const alturaMaxima =
-                window.innerWidth <= 600
-                    ? window.innerHeight - 132
-                    : window.innerHeight - 80;
-
-            if (win.offsetWidth > larguraMaxima) {
-                win.style.width = `${larguraMaxima}px`;
-            }
-
-            if (win.offsetHeight > alturaMaxima) {
-                win.style.height = `${alturaMaxima}px`;
-            }
-
-            posicionarJanela(win);
-        });
-    });
-
-    if (window.visualViewport) {
-
-        window.visualViewport.addEventListener("resize", () => {
-
-            const output = document.getElementById("terminal-output");
-
-            if (output) {
-                output.scrollTop = output.scrollHeight;
-            }
-
-        });
+        }
 
     }
+);
+
+
 </script>
+
+
+</body>
+
+</html>
