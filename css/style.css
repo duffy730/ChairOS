@@ -468,6 +468,7 @@ a:hover {
 
 /* Terminal */
 .terminal-output{
+    padding: 15px;
     height:375px;
     overflow-y:auto;
     font-family:Consolas, monospace;
@@ -475,6 +476,7 @@ a:hover {
 }
 
 .terminal-input-line{
+    padding: 15px;
     display:flex;
     gap:10px;
     align-items:center;
