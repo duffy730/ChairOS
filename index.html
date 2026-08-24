@@ -513,55 +513,14 @@ const projetosData = {
     },
 
 
-    academia: {
-
-        titulo: "API Academia",
-
-        status: "Disponível",
-
-        descricao: `
-            API REST desenvolvida para gerenciar alunos,
-            planos, matrículas, pagamentos e produtos
-            de uma academia.
-        `,
-
-        tecnologias: [
-            ".NET 8",
-            "C#",
-            "SQL Server",
-            "Entity Framework",
-            "DDD",
-            "JWT",
-            "Swagger"
-        ],
-
-        arquivo: "AlunoController.cs",
-
-        codigo: `public async Task<ActionResult> ObterPorId(int id)
-{
-    var aluno =
-        await _alunoService.ObterPorId(id);
-
-    if (aluno == null)
-        return NotFound();
-
-    return Ok(aluno);
-}`,
-
-        github:
-            "https://github.com/duffy730/SistemaAcademia/tree/main/ApiAcademia"
-
-    },
-
-
     webAcademia: {
 
-        titulo: "Web Academia",
+        titulo: "Sistema Academia",
 
         status: "Em desenvolvimento",
 
         descricao: `
-            Aplicação web para gestão de academias integrada
+            Aplicação para gestão de academias integrada
             a uma API RESTful, oferecendo controle de alunos,
             matrículas, planos, pagamentos e estoque.
         `,
@@ -569,9 +528,14 @@ const projetosData = {
         tecnologias: [
             "React",
             "CSS",
-            "Integração com API",
             "Node.js",
-            "Responsividade"
+            ".NET 8",
+            "C#",
+            "SQL Server",
+            "Entity Framework",
+            "DDD",
+            "JWT",
+            "Swagger"
         ],
 
         arquivo: "Aluno.jsx",
@@ -1032,8 +996,7 @@ const trajectoryData = {
 
                 achievements: [
                     "ChairOS",
-                    "API Academia",
-                    "Web Academia",
+                    "Sistema Academia",
                     "Projetos experimentais"
                 ]
 
@@ -1803,36 +1766,6 @@ const apps = {
 
                     </button>
 
-
-
-                    <button
-                        class="project-item"
-                        data-project="academia"
-                    >
-
-                        <div class="project-icon">
-
-                            <i class="bi bi-code-slash"></i>
-
-                        </div>
-
-
-                        <div class="project-item-info">
-
-                            <strong>
-                                API Academia
-                            </strong>
-
-                            <span>
-                                .NET / SQL Server
-                            </span>
-
-                        </div>
-
-                    </button>
-
-
-
                     <button
                         class="project-item"
                         data-project="webAcademia"
@@ -1848,7 +1781,7 @@ const apps = {
                         <div class="project-item-info">
 
                             <strong>
-                                Web Academia
+                                Sistema Academia
                             </strong>
 
                             <span>
@@ -2988,8 +2921,7 @@ function iniciarTerminal(win) {
 
                         <p>
                             • ChairOS<br>
-                            • API Academia<br>
-                            • Web Academia
+                            • Sistema Academia
                         </p>
 
                     `;
