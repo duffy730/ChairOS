@@ -2375,7 +2375,11 @@ body {
     }
 
     .project-status {
-        display: none;
+        font-size: 11px;
+    }
+
+    .project-status-yellow {
+        font-size: 11px;
     }
 
     .project-code pre {
@@ -2587,6 +2591,10 @@ body {
         overflow: hidden;
     }
 
+    ::-webkit-scrollbar {
+        width: 1px; 
+    }
+
     .header {
         height: 38px;
         padding: 0 10px;
@@ -2665,6 +2673,12 @@ body {
         display: none;
     }
 
+    #window-area {
+        height: calc(100dvh - 44px);
+        position: relative;
+        overflow: hidden;
+    }
+
     .window,
     .projects-window {
         top: 8px !important;
@@ -2677,6 +2691,14 @@ body {
         max-height: none;
 
         border-radius: 10px;
+
+        position: absolute;
+
+        border-radius: 12px;
+
+        overflow-y: hidden;
+
+        z-index: 100;
     }
 
     .window-header {
@@ -3099,12 +3121,7 @@ body {
        ========================= */
 
     .trajectory-details {
-        width: 100%;
-        min-width: 0;
-
-        padding: 12px;
-
-        border-radius: 9px;
+        display: none;
     }
 
     .details-top {

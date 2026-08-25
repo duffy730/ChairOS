@@ -3123,7 +3123,7 @@ function openWindow(appName) {
 
     const espacoVertical =
         mobile
-            ? 132
+            ? 102
             : 80;
 
 
@@ -3478,19 +3478,16 @@ function makeDraggable(win) {
 
 function posicionarJanela(win) {
 
-    if (
-        window.innerWidth <= 600
-    ) {
+    if (window.innerWidth <= 600) {
 
-        win.style.left =
-            "8px";
+    win.style.left = "8px";
+    win.style.top = "8px";
 
-        win.style.top =
-            "8px";
+    win.style.width = `${window.innerWidth - 16}px`;
+    win.style.maxHeight = `${window.innerHeight - 102}px`;
 
-        return;
-
-    }
+    return;
+}
 
 
     const larguraArea =
