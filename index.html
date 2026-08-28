@@ -624,7 +624,7 @@ const trajectoryData = {
                     "Salvador - BA",
 
                 type:
-                    "CLT",
+                    "Jovem Aprendiz",
 
                 description: `
                     Atuação no desenvolvimento de sistemas
@@ -928,7 +928,7 @@ const trajectoryData = {
                     "Salvador - BA",
 
                 type:
-                    "CLT",
+                    "Jovem Aprendiz",
 
                 description: `
                     Desenvolvimento e manutenção de sistemas,
@@ -3223,6 +3223,8 @@ function openWindow(appName) {
 
     if (appName === "terminal") {
 
+        win.classList.add("terminal-window");
+
         iniciarTerminal(
             win
         );
@@ -3520,7 +3522,7 @@ function posicionarJanela(win) {
             (
                 alturaArea -
                 win.offsetHeight
-            ) / 2
+            ) / 2 - 60
         );
 
 
@@ -3655,41 +3657,77 @@ window.addEventListener(
    TECLADO MOBILE / TERMINAL
 ========================================================= */
 
-if (
-    window.visualViewport
-) {
+if (window.visualViewport) {
 
-    window.visualViewport.addEventListener(
-        "resize",
-        () => {
+    function ajustarInterfaceMobile() {
 
-            const terminal =
-                document.querySelector(
-                    '[data-window="terminal"]'
-                );
+        if (window.innerWidth > 600) {
+            return;
+        }
 
+        const viewport = window.visualViewport;
+        const appsBar = document.querySelector(".apps-bar");
+        const terminal = document.querySelector(".terminal-window");
 
-            if (!terminal) {
-                return;
-            }
+        /*
+         * Diferença entre a altura normal da tela
+         * e a altura atual do viewport.
+         */
+        const tecladoAberto =
+            window.innerHeight - viewport.height > 150;
 
+        /*
+         * Mostra/esconde a barra de aplicativos
+         */
+        if (appsBar) {
+            appsBar.classList.toggle(
+                "keyboard-open",
+                tecladoAberto
+            );
+        }
+
+        /*
+         * Ajusta o terminal
+         */
+        if (terminal) {
+
+            const alturaDisponivel =
+                viewport.height - 16;
+
+            terminal.style.height =
+                `${Math.max(250, alturaDisponivel)}px`;
+
+            terminal.style.top = "8px";
+            terminal.style.left = "8px";
+
+            terminal.style.width =
+                `${window.innerWidth - 16}px`;
 
             const output =
-                terminal.querySelector(
-                    "#terminal-output"
-                );
-
+                terminal.querySelector("#terminal-output");
 
             if (output) {
 
-                output.scrollTop =
-                    output.scrollHeight;
+                requestAnimationFrame(() => {
+
+                    output.scrollTop =
+                        output.scrollHeight;
+
+                });
 
             }
-
         }
+    }
+
+    window.visualViewport.addEventListener(
+        "resize",
+        ajustarInterfaceMobile
     );
 
+    window.visualViewport.addEventListener(
+        "scroll",
+        ajustarInterfaceMobile
+    );
 }
 
 
